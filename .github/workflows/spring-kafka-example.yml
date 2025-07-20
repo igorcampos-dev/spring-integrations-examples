@@ -1,0 +1,39 @@
+name: spring-kafka-example CI Build
+
+on:
+  push:
+    paths:
+      - "spring-kafka-example/**"
+    branches: [master]
+  pull_request:
+    paths:
+      - "spring-kafka-example/**"
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  build:
+    name: Run Unit & Integration Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: spring-kafka-example
+    strategy:
+      matrix:
+        distribution: [ 'temurin' ]
+        java: [ '21' ]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+
+      - name: Set up JDK ${{ matrix.java }}
+        uses: actions/setup-java@v4.7.1
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: ${{ matrix.distribution }}
+          cache: 'maven'
+      - name: Build and analyze
+        run: ./mvnw clean verify
