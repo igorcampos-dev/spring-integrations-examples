@@ -1,0 +1,15 @@
+"component : spring-kafka-example":
+  - changed-files:
+      - any-glob-to-any-file: 'spring-kafka-example/**/*'
+
+"type: dependency-upgrade":
+  - changed-files:
+      - any-glob-to-any-file: spring-kafka-example/pom.xml
+
+"ci: github-actions":
+  - changed-files:
+      - any-glob-to-any-file: '.github/**/*'
+
+"tool: renovate":
+  - changed-files:
+      - any-glob-to-any-file: 'renovate.json'
