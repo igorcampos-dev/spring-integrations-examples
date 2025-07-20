@@ -1,7 +1,7 @@
 spring:
 
   application:
-    name: spring-kafka-example-prd
+    name: spring-kafka-example-dev
 
 logging:
 
