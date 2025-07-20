@@ -1,0 +1,9 @@
+spring:
+
+  application:
+    name: spring-kafka-example
+
+logging:
+
+  pattern:
+    console: "%d{yyyy-MM-dd'T'HH:mm:ss} | ${spring.application.name} | %class{30} | %level | %m%n"
