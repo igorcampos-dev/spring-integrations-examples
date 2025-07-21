@@ -19,5 +19,5 @@ jobs:
     steps:
     - uses: actions/labeler@v5
       with:
-        repo-token: "${{ secrets.PAT }}"
+        repo-token: "${{ secrets.PAT_TOKEN }}"
         sync-labels: true
