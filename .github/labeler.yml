@@ -13,3 +13,7 @@
 "tool: renovate":
   - changed-files:
       - any-glob-to-any-file: 'renovate.json'
+
+"doc: documentation":
+  - changed-files:
+      - any-glob-to-any-file: 'README.md'      
