@@ -1,4 +1,4 @@
-# spring-example-kafka
+# spring-kafka-example
 
 ---
 
