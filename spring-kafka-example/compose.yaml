@@ -1,6 +1,7 @@
 services:
 
-  server:
+  app:
+    container_name: app
     build:
       context: .
     ports:
@@ -10,8 +11,8 @@ services:
       SPRING_PROFILES_ACTIVE: "default"
 
   kafka:
-    image: confluentinc/cp-kafka:8.0.0
     container_name: kafka
+    image: confluentinc/cp-kafka:8.0.0
     ports:
       - "9092:9092"
     environment:
