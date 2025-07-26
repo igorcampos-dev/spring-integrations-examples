@@ -15,6 +15,7 @@ services:
       - grafana
 
   prometheus:
+    container_name: prometheus
     image: prom/prometheus:v3.5.0
     ports:
       - "9090:9090"
@@ -24,6 +25,7 @@ services:
       - '--config.file=/etc/prometheus/prometheus.yml'
 
   grafana:
+    container_name: grafana
     image: grafana/grafana:12.1.0
     ports:
       - "3000:3000"
