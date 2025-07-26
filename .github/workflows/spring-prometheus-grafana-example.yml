@@ -66,7 +66,6 @@ jobs:
           PROMETHEUS_STATUS=$(docker inspect -f '{{.State.Running}}' prometheus || echo "false")
           GRAFANA_STATUS=$(docker inspect -f '{{.State.Running}}' grafana || echo "false")
 
-
           echo "App status: $APP_STATUS"
           echo "Prometheus status: $PROMETHEUS_STATUS"
           echo "Grafana status: $GRAFANA_STATUS"
