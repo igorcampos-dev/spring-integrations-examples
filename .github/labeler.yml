@@ -1,8 +1,8 @@
-"project : spring-kafka-example":
+"project: spring-kafka-example":
   - changed-files:
       - any-glob-to-any-file: 'spring-kafka-example/**/*'
 
-"project : spring-prometheus-grafana-example":
+"project: spring-prometheus-grafana-example":
   - changed-files:
       - any-glob-to-any-file: 'spring-prometheus-grafana-example/**/*'
 
