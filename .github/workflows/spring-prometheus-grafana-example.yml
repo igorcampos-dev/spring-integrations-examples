@@ -63,8 +63,8 @@ jobs:
           echo "Verificando saúde dos containers..."
 
           APP_STATUS=$(docker inspect -f '{{.State.Running}}' app || echo "false")
-          PROMETHEUS_STATUS=$(docker inspect -f '{{.State.Running}}' app || echo "false")
-          GRAFANA_STATUS=$(docker inspect -f '{{.State.Running}}' app || echo "false")
+          PROMETHEUS_STATUS=$(docker inspect -f '{{.State.Running}}' prometheus || echo "false")
+          GRAFANA_STATUS=$(docker inspect -f '{{.State.Running}}' grafana || echo "false")
 
 
           echo "App status: $APP_STATUS"
