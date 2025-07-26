@@ -10,9 +10,6 @@ services:
       SPRING_PROFILES_ACTIVE: prd
     ports:
       - "80:80"
-    depends_on:
-      - prometheus
-      - grafana
 
   prometheus:
     container_name: prometheus
@@ -23,6 +20,8 @@ services:
       - ./docker/prometheus.yml:/etc/prometheus/prometheus.yml
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
+    depends_on:
+      - app
 
   grafana:
     container_name: grafana
