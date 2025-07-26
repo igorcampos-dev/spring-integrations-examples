@@ -37,6 +37,7 @@ jobs:
         run: ./mvnw clean verify
 
   health-check:
+    name: Health Check on Services
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository and submodules
@@ -44,14 +45,18 @@ jobs:
         with:
           submodules: true
 
+      - name: Extract service names from docker compose
+        id: services
+        run: |
+          echo "services<<EOF" >> $GITHUB_OUTPUT
+          docker compose -f ./spring-prometheus-grafana-example/compose.yaml config --services >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
       - name: Start containers with Compose Action
         uses: hoverkraft-tech/compose-action@v2.3.0
         with:
           compose-file: './spring-prometheus-grafana-example/compose.yaml'
-          services: |
-            app
-            prometheus
-            grafana
+          services: ${{ steps.services.outputs.services }}
           up-flags: '--build'
           down-flags: '--volumes'
 
@@ -62,19 +67,12 @@ jobs:
         run: |
           echo "Checking the health of the containers..."
 
-          APP_STATUS=$(docker inspect -f '{{.State.Running}}' app || echo "false")
-          PROMETHEUS_STATUS=$(docker inspect -f '{{.State.Running}}' prometheus || echo "false")
-          GRAFANA_STATUS=$(docker inspect -f '{{.State.Running}}' grafana || echo "false")
-
-          echo "App status: $APP_STATUS"
-          echo "Prometheus status: $PROMETHEUS_STATUS"
-          echo "Grafana status: $GRAFANA_STATUS"
-
-          if [ "$APP_STATUS" != "true" ] || [ "$PROMETHEUS_STATUS" != "true" ] || [ "$GRAFANA_STATUS" != "true" ]; then
-            echo "::error ::An error occurred while executing the containers."
-            exit 1
-          fi
-
-      # Se chegou aqui, ambos estão ativos
-      - name: Success message
-        run: echo "Container testing completed successfully!"
+          SERVICES="${{ steps.services.outputs.services }}"
+          for service in $SERVICES; do
+            status=$(docker inspect -f '{{.State.Running}}' "$service" || echo "false")
+            echo "$service status: $status"
+            if [ "$status" != "true" ]; then
+              echo "::error ::Service $service is not running."
+              exit 1
+            fi
+          done
