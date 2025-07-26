@@ -37,6 +37,7 @@ jobs:
         run: ./mvnw clean verify
 
   health-check:
+    name: Health Check on Services
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository and submodules
@@ -44,13 +45,18 @@ jobs:
         with:
           submodules: true
 
+      - name: Extract service names from docker compose
+        id: services
+        run: |
+          echo "services<<EOF" >> $GITHUB_OUTPUT
+          docker compose -f ./spring-kafka-example/compose.yaml config --services >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
       - name: Start containers with Compose Action
         uses: hoverkraft-tech/compose-action@v2.3.0
         with:
           compose-file: './spring-kafka-example/compose.yaml'
-          services: |
-            app
-            kafka
+          services: ${{ steps.services.outputs.services }}
           up-flags: '--build'
           down-flags: '--volumes'
 
@@ -59,19 +65,14 @@ jobs:
 
       - name: Check container health
         run: |
-          echo "Verificando saúde dos containers..."
+          echo "Checking the health of the containers..."
 
-          APP_STATUS=$(docker inspect -f '{{.State.Running}}' app || echo "false")
-          KAFKA_STATUS=$(docker inspect -f '{{.State.Running}}' kafka || echo "false")
-
-          echo "Status do app: $APP_STATUS"
-          echo "Status do kafka: $KAFKA_STATUS"
-
-          if [ "$APP_STATUS" != "true" ] || [ "$KAFKA_STATUS" != "true" ]; then
-            echo "::error ::Um ou ambos os containers estão inativos. PR não deve ser autorizado!"
-            exit 1
-          fi
-
-      # Se chegou aqui, ambos estão ativos
-      - name: Success message
-        run: echo "✅ Todos os containers estão rodando com sucesso!"
+          SERVICES="${{ steps.services.outputs.services }}"
+          for service in $SERVICES; do
+            status=$(docker inspect -f '{{.State.Running}}' "$service" || echo "false")
+            echo "$service status: $status"
+            if [ "$status" != "true" ]; then
+              echo "::error ::Service $service is not running."
+              exit 1
+            fi
+          done
