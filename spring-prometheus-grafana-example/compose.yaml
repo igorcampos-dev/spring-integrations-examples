@@ -31,8 +31,8 @@ services:
     depends_on:
       - prometheus
     environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SECURITY_ADMIN_USER=admin #⚠️ DO NOT USE IN PRODUCTION
+      - GF_SECURITY_ADMIN_PASSWORD=admin #⚠️ DO NOT USE IN PRODUCTION
     volumes:
       - ./docker/provisioning/datasources:/etc/grafana/provisioning/datasources
       - ./docker/provisioning/dashboards:/etc/grafana/provisioning/dashboards
