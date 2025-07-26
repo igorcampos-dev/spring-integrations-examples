@@ -147,7 +147,7 @@
           "thresholds": "",
           "title": "Uptime",
           "transparent": false,
-          "type": "singlestat",
+          "type": "stat",
           "valueFontSize": "80%",
           "valueMaps": [
             {
@@ -230,7 +230,7 @@
           "thresholds": "",
           "title": "Start time",
           "transparent": false,
-          "type": "singlestat",
+          "type": "stat",
           "valueFontSize": "70%",
           "valueMaps": [
             {
@@ -310,7 +310,7 @@
           ],
           "thresholds": "70,90",
           "title": "Heap used",
-          "type": "singlestat",
+          "type": "stat",
           "valueFontSize": "80%",
           "valueMaps": [
             {
@@ -395,7 +395,7 @@
           ],
           "thresholds": "70,90",
           "title": "Non-Heap used",
-          "type": "singlestat",
+          "type": "stat",
           "valueFontSize": "80%",
           "valueMaps": [
             {
