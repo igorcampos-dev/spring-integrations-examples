@@ -14,7 +14,7 @@ in customizable dashboards using Grafana.
 ## Tech stack
 
 - Spring Boot
-- Spring actuator
+- Spring Actuator
 - Java 21
 - Prometheus (Docker)
 - Grafana (Docker)
@@ -25,7 +25,7 @@ in customizable dashboards using Grafana.
 
 | Service    | Local URL                                      | Username/Password |
 |------------|------------------------------------------------|-------------------|
-| Prometheus | [http://localhost:9090](http://localhost:9090) | none/none         |
+| Prometheus | [http://localhost:9090](http://localhost:9090) | n/a               |
 | Grafana    | [http://localhost:3000](http://localhost:3000) | admin/admin       |
 
 ---
