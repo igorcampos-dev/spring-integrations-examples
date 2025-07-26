@@ -1,10 +1,16 @@
-"component : spring-kafka-example":
+"project : spring-kafka-example":
   - changed-files:
       - any-glob-to-any-file: 'spring-kafka-example/**/*'
 
+"project : spring-prometheus-grafana-example":
+  - changed-files:
+      - any-glob-to-any-file: 'spring-prometheus-grafana-example/**/*'
+
 "type: dependency-upgrade":
   - changed-files:
-      - any-glob-to-any-file: spring-kafka-example/pom.xml
+      - any-glob-to-any-file:
+          - spring-kafka-example/pom.xml
+          - spring-prometheus-grafana-example/pom.xml
 
 "ci: github-actions":
   - changed-files:
