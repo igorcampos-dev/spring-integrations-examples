@@ -50,6 +50,8 @@ jobs:
           compose-file: './spring-prometheus-grafana-example/compose.yaml'
           services: |
             app
+            prometheus
+            grafana
           up-flags: '--build'
           down-flags: '--volumes'
 
@@ -58,13 +60,17 @@ jobs:
 
       - name: Check container health
         run: |
-          echo "Verificando saúde dos containers..."
+          echo "Checking the health of the containers..."
 
           APP_STATUS=$(docker inspect -f '{{.State.Running}}' app || echo "false")
+          PROMETHEUS_STATUS=$(docker inspect -f '{{.State.Running}}' prometheus || echo "false")
+          GRAFANA_STATUS=$(docker inspect -f '{{.State.Running}}' grafana || echo "false")
 
-          echo "Status do app: $APP_STATUS"
+          echo "App status: $APP_STATUS"
+          echo "Prometheus status: $PROMETHEUS_STATUS"
+          echo "Grafana status: $GRAFANA_STATUS"
 
-          if [ "$APP_STATUS" != "true" ]; then
+          if [ "$APP_STATUS" != "true" ] || [ "$PROMETHEUS_STATUS" != "true" ] || [ "$GRAFANA_STATUS" != "true" ]; then
             echo "::error ::An error occurred while executing the containers."
             exit 1
           fi
