@@ -25,8 +25,8 @@ in customizable dashboards using Grafana.
 
 | Service    | Local URL                                      | Username/Password |
 |------------|------------------------------------------------|-------------------|
-| Prometheus | [http://localhost:9090](http://localhost:9090) | admin/admin       |
-| Grafana    | [http://localhost:3000](http://localhost:3000) | none/none         |
+| Prometheus | [http://localhost:9090](http://localhost:9090) | none/none         |
+| Grafana    | [http://localhost:3000](http://localhost:3000) | admin/admin       |
 
 ---
 
