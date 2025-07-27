@@ -3,6 +3,18 @@ spring:
   application:
     name: spring-kafka-example-dev
 
+  kafka:
+    topics:
+        topic-1: ${KAFKA_TOPIC_1:spring-kafka-example-simple-topic}
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9093}
+    consumer:
+      group-id: ${KAFKA_GROUP_ID:spring-kafka-example-group}
+      auto-offset-reset: ${KAFKA_AUTO_OFFSET_RESET:earliest}
+      key-deserializer: ${KAFKA_KEY_DESERIALIZER:org.apache.kafka.common.serialization.StringDeserializer}
+      value-deserializer: ${KAFKA_VALUE_DESERIALIZER:org.apache.kafka.common.serialization.StringDeserializer}
+    listener:
+      missing-topics-fatal: ${KAFKA_MISSING_TOPICS_FATAL:false}
+
 logging:
 
   pattern:

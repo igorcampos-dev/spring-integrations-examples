@@ -9,20 +9,59 @@ services:
     environment:
       SERVER_PORT: "80"
       SPRING_PROFILES_ACTIVE: "default"
+      KAFKA_TOPIC_1: spring-kafka-example-simple-topic
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      KAFKA_GROUP_ID: spring-kafka-example-group
+      KAFKA_AUTO_OFFSET_RESET: earliest
+      KAFKA_KEY_DESERIALIZER: org.apache.kafka.common.serialization.StringDeserializer
+      KAFKA_VALUE_DESERIALIZER: org.apache.kafka.common.serialization.StringDeserializer
+      KAFKA_MISSING_TOPICS_FATAL: false
+    depends_on:
+      - kafka
+    networks:
+      - kafka-net
 
   kafka:
+    image: apache/kafka:4.0.0
     container_name: kafka
-    image: confluentinc/cp-kafka:8.0.0
     ports:
       - "9092:9092"
+      - "9093:9093"
     environment:
       KAFKA_NODE_ID: 1
       KAFKA_PROCESS_ROLES: broker,controller
-      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
-      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:9093
+      KAFKA_LISTENERS: CONTROLLER://0.0.0.0:9094,PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9094
       KAFKA_LOG_DIRS: /tmp/kraft-combined-logs
-      CLUSTER_ID: qGyb4Z0XQpeoKgUXYfCCLw
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+    networks:
+      - kafka-net
+
+  kafka-init:
+    container_name: kafka-init
+    image: apache/kafka:4.0.0
+    depends_on:
+      kafka:
+        condition: service_started
+    command: [ "/bin/bash", "-c", "/create_topic.sh" ]
+    environment:
+      KAFKA_HOST: kafka
+      KAFKA_PORT: 9092
+      KAFKA_TOPIC_CREATE: spring-kafka-example-simple-topic
+    volumes:
+      - type: bind
+        source: ./docker/create_topic.sh
+        target: /create_topic.sh
+    init: true
+    networks:
+      - kafka-net
+
+networks:
+  kafka-net:
+    driver: bridge
+
