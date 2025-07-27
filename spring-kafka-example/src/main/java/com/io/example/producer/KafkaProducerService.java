@@ -4,5 +4,5 @@ import com.io.example.controller.dto.request.MessageRequestDtoRequest;
 
 @FunctionalInterface
 public interface KafkaProducerService {
-    void sendMessage(MessageRequestDtoRequest mensagem);
+    void sendMessage(MessageRequestDtoRequest message);
 }

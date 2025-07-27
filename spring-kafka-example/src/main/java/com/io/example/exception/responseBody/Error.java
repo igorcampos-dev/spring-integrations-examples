@@ -1,6 +1,5 @@
 package com.io.example.exception.responseBody;
 
-import jakarta.servlet.ServletRequest;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,8 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.server.ServerWebExchange;
-
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -24,12 +21,12 @@ public class Error {
     private Integer status;
     private String error;
 
-    public static ResponseEntity<Error> response(String message, HttpStatus status, HttpServletRequest uri){
+    public static ResponseEntity<Error> response(String message, HttpStatus status, HttpServletRequest request){
         return ResponseEntity
                 .status(status)
                 .body(Error.builder()
                            .timestamp(getInstantNow())
-                           .path(uri.getRequestURI())
+                           .path(request.getRequestURI())
                            .status(status.value())
                            .error(message)
                            .build());

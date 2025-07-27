@@ -27,7 +27,7 @@ public class JsonMapper {
             return objectMapper.readValue(jsonBody, typeClass);
         } catch (JsonProcessingException e) {
             log.error("error converting an String to object. cause of the error: {}", e.getMessage());
-            throw new RuntimeException("Object deserialization failed", e);
+            throw new IllegalArgumentException("Object deserialization failed for target type: " + typeClass.getSimpleName(), e);
         }
     }
 
