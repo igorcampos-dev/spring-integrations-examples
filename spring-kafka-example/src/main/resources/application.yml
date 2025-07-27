@@ -3,7 +3,16 @@ spring:
   application:
     name: spring-kafka-example-prd
 
+  kafka:
+    bootstrap-servers: ${KAFKA_SERVER_PORT}
+    consumer:
+      group-id: myGroup
+      auto-offset-reset: earliest
+
 logging:
 
   pattern:
     console: "%d{yyyy-MM-dd'T'HH:mm:ss} | ${spring.application.name} | %class{30} | %level | %m%n"
+
+  level:
+    org.apache.kafka.common.config: OFF

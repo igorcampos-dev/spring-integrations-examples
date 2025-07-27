@@ -3,7 +3,22 @@ spring:
   application:
     name: spring-kafka-example-dev
 
+  kafka:
+    topics:
+        topic-1: ${KAFKA_TOPIC_1:spring-kafka-example-topic}
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: spring-kafka-example-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      missing-topics-fatal: false
+
 logging:
 
   pattern:
     console: "%d{yyyy-MM-dd'T'HH:mm:ss} | ${spring.application.name} | %class{30} | %level | %m%n"
+
+  level:
+    org.apache.kafka.common.config: OFF
