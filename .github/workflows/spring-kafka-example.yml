@@ -68,11 +68,19 @@ jobs:
           echo "Checking the health of the containers..."
 
           SERVICES="${{ steps.services.outputs.services }}"
+
           for service in $SERVICES; do
-            status=$(docker inspect -f '{{.State.Running}}' "$service" || echo "false")
-            echo "$service status: $status"
-            if [ "$status" != "true" ]; then
-              echo "::error ::Service $service is not running."
-              exit 1
+            running=$(docker inspect -f '{{.State.Running}}' "$service" 2>/dev/null || echo "false")
+
+            if [ "$running" = "true" ]; then
+              echo "$service is running ✔️"
+            else
+              exit_code=$(docker inspect -f '{{.State.ExitCode}}' "$service" 2>/dev/null || echo "1")
+              if [ "$exit_code" = "0" ]; then
+                echo "$service is stopped but exited with code 0 ✔️"
+              else
+                echo "::error ::$service is stopped and exited with code $exit_code ❌"
+                exit 1
+              fi
             fi
           done

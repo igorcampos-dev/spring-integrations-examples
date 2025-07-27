@@ -4,15 +4,18 @@ spring:
     name: spring-kafka-example-prd
 
   kafka:
-    bootstrap-servers: ${KAFKA_SERVER_PORT}
+    topics:
+      topic-1: ${KAFKA_TOPIC_1}
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
     consumer:
-      group-id: myGroup
-      auto-offset-reset: earliest
+      group-id: ${KAFKA_GROUP_ID}
+      auto-offset-reset: ${KAFKA_AUTO_OFFSET_RESET}
+      key-deserializer: ${KAFKA_KEY_DESERIALIZER}
+      value-deserializer: ${KAFKA_VALUE_DESERIALIZER}
+    listener:
+      missing-topics-fatal: ${KAFKA_MISSING_TOPICS_FATAL}
 
 logging:
 
   pattern:
     console: "%d{yyyy-MM-dd'T'HH:mm:ss} | ${spring.application.name} | %class{30} | %level | %m%n"
-
-  level:
-    org.apache.kafka.common.config: OFF

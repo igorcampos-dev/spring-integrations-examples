@@ -5,20 +5,17 @@ spring:
 
   kafka:
     topics:
-        topic-1: ${KAFKA_TOPIC_1:spring-kafka-example-topic}
-    bootstrap-servers: localhost:9092
+        topic-1: ${KAFKA_TOPIC_1:spring-kafka-example-simple-topic}
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9093}
     consumer:
-      group-id: spring-kafka-example-group
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: ${KAFKA_GROUP_ID:spring-kafka-example-group}
+      auto-offset-reset: ${KAFKA_AUTO_OFFSET_RESET:earliest}
+      key-deserializer: ${KAFKA_KEY_DESERIALIZER:org.apache.kafka.common.serialization.StringDeserializer}
+      value-deserializer: ${KAFKA_VALUE_DESERIALIZER:org.apache.kafka.common.serialization.StringDeserializer}
     listener:
-      missing-topics-fatal: false
+      missing-topics-fatal: ${KAFKA_MISSING_TOPICS_FATAL:false}
 
 logging:
 
   pattern:
     console: "%d{yyyy-MM-dd'T'HH:mm:ss} | ${spring.application.name} | %class{30} | %level | %m%n"
-
-  level:
-    org.apache.kafka.common.config: OFF

@@ -1,7 +1,7 @@
 package com.io.example.controller;
 
 import com.io.example.controller.dto.request.MessageRequestDtoRequest;
-import com.io.example.controller.dto.response.GetDtoResponse;
+import com.io.example.controller.dto.response.SimpleTopicDtoResponse;
 import com.io.example.producer.KafkaProducerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,10 +15,10 @@ public class ExampleController {
 
     private final KafkaProducerService kafkaProducerService;
 
-    @PostMapping("/send")
-    public ResponseEntity<GetDtoResponse> sendMessage(@RequestBody MessageRequestDtoRequest dto){
-        this.kafkaProducerService.sendMessage(dto.message());
-        return ResponseEntity.status(HttpStatus.OK).body(new GetDtoResponse("Message sent successfully!"));
+    @PostMapping("/send/simple-topic")
+    public ResponseEntity<SimpleTopicDtoResponse> sendMessageToSimpleTopic(@RequestBody MessageRequestDtoRequest dto){
+        this.kafkaProducerService.sendMessage(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(new SimpleTopicDtoResponse("Message sent successfully!"));
     }
 
 }
