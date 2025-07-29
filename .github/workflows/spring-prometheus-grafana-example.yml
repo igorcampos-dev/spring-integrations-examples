@@ -65,14 +65,4 @@ jobs:
 
       - name: Check container health
         run: |
-          echo "Checking the health of the containers..."
-
-          SERVICES="${{ steps.services.outputs.services }}"
-          for service in $SERVICES; do
-            status=$(docker inspect -f '{{.State.Running}}' "$service" || echo "false")
-            echo "$service status: $status"
-            if [ "$status" != "true" ]; then
-              echo "::error ::Service $service is not running."
-              exit 1
-            fi
-          done
+          ./.github/scripts/check-container-health.sh "${{ steps.services.outputs.services }}"
