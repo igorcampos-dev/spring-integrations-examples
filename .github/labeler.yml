@@ -6,11 +6,13 @@
   - changed-files:
       - any-glob-to-any-file: 'spring-prometheus-grafana-example/**/*'
 
+"project: spring-keycloak-example":
+  - changed-files:
+      - any-glob-to-any-file: 'spring-keycloak-example/**/*'
+
 "type: dependency-upgrade":
   - changed-files:
-      - any-glob-to-any-file:
-          - spring-kafka-example/pom.xml
-          - spring-prometheus-grafana-example/pom.xml
+      - any-glob-to-any-file: "**/pom.xml"
 
 "ci: github-actions":
   - changed-files:
