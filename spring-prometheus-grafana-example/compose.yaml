@@ -7,7 +7,7 @@ services:
       context: .
     environment:
       SERVER_PORT: 80
-      SPRING_PROFILES_ACTIVE: prd
+      SPRING_PROFILES_ACTIVE: "default"
     ports:
       - "80:80"
 
