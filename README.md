@@ -14,9 +14,10 @@ Each subdirectory in this repository represents a specific integration or featur
 
 Below you will find a summary table of each subproject. For more details, please refer to the individual README.md files.
 
-| Name                                          | Description                                                            |
-|-----------------------------------------------|------------------------------------------------------------------------|
-| [Spring Boot + Kafka](./spring-kafka-example) | Demonstrates a basic integration between Spring Boot and Apache Kafka. |
+| Name                                          | Description                                                                                                   |
+|-----------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| [Spring Boot + Kafka](./spring-kafka-example) | Demonstrates a basic integration between Spring Boot and Apache Kafka.                                        |
+| [Spring Boot + Kafka](./spring-keycloak-example) | Demonstrates a basic integration between Spring Boot and Keycloak.                                            |
 | [Spring Boot + Grafana + Prometheus](./spring-prometheus-grafana-example) | Demonstrates a basic integration between Spring Boot With Grafana and Prometheus. |
 
 ---
