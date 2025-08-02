@@ -3,3 +3,8 @@ spring:
 
   application:
     name: spring-keycloak-example-dev
+
+logging:
+
+  pattern:
+    console: "%d{yyyy-MM-dd'T'HH:mm:ss} | ${spring.application.name} | %class{30} | %level | %m%n"
