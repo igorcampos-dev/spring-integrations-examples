@@ -9,18 +9,20 @@ services:
       dockerfile: Dockerfile
     environment:
       SERVER_PORT: 8083
-      SPRING_PROFILES_ACTIVE: "default"
+      SPRING_PROFILES_ACTIVE: "OIDC"
       AUTH_CLIENT_ID: oidc-client
       AUTH_CLIENT_SECRET: pvRQkTKcE2zZw9vxT30oXC1Zynq2b3yw
       AUTH_SCOPE: openid, profile, email
       AUTH_GRANT_TYPE: authorization_code
       AUTH_REDIRECT_URI: "{baseUrl}/login/oauth2/code/{registrationId}"
-      AUTH_ISSUER_URI: http://keycloak:8080/realms/redirect-login-example
+      AUTH_ISSUER_URI: http://localhost:8080/realms/redirect-login-example
     ports:
       - "8083:8083"
     depends_on:
       - keycloak
       - keycloak-database
+    networks:
+      - spring_keycloak
 
   keycloak:
     container_name: keycloak
@@ -47,6 +49,9 @@ services:
       - ./docker/keycloak/certs:/opt/keycloak/certs
     depends_on:
       - keycloak-database
+    networks:
+      - spring_keycloak
+
 
   keycloak-database:
     image: postgres:14.18-alpine3.22
@@ -58,3 +63,8 @@ services:
       - "5432:5432"
     volumes:
       - ./docker/keycloak/backups/oidc_auth_db_backup.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - spring_keycloak
+
+networks:
+  spring_keycloak:
