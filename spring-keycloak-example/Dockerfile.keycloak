@@ -1,6 +1,7 @@
 FROM quay.io/keycloak/keycloak:26.3 AS builder
 
 WORKDIR /opt/keycloak
+
 RUN /opt/keycloak/bin/kc.sh build
 
 FROM quay.io/keycloak/keycloak:26.3
