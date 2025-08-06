@@ -1,7 +1,6 @@
 
 services:
 
-  #Not usable
   app:
     container_name: app
     build:
@@ -19,8 +18,8 @@ services:
     ports:
       - "8083:8083"
     depends_on:
-      - keycloak
-      - keycloak-database
+      keycloak:
+        condition: service_healthy
     networks:
       - spring_keycloak
 
@@ -49,9 +48,13 @@ services:
       - ./docker/keycloak/certs:/opt/keycloak/certs
     depends_on:
       - keycloak-database
+    healthcheck:
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/9000;echo -e 'GET /health/ready HTTP/1.1\r\nhost: http://localhost\r\nConnection: close\r\n\r\n' >&3;if [ $? -eq 0 ]; then echo 'Healthcheck Successful';exit 0;else echo 'Healthcheck Failed';exit 1;fi;"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
     networks:
       - spring_keycloak
-
 
   keycloak-database:
     image: postgres:14.18-alpine3.22
