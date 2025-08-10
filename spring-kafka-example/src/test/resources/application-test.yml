@@ -1,0 +1,24 @@
+spring:
+
+  application:
+    name: spring-kafka-example-test
+
+  kafka:
+    topics:
+      topic-1: spring-kafka-example-simple-topic-test
+    bootstrap-servers: localhost:9093
+    consumer:
+      group-id: spring-kafka-example-group-test
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      missing-topics-fatal: false
+
+logging:
+
+  pattern:
+    console: "%d{yyyy-MM-dd'T'HH:mm:ss} | ${spring.application.name} | %class{30} | %level | %m%n"
+
+kafka:
+  group-id: group-test
