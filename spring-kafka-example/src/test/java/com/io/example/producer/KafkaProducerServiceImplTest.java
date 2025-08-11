@@ -1,8 +1,7 @@
-package com.io.example;
+package com.io.example.producer;
 
 import com.io.example.controller.dto.request.MessageRequestDtoRequest;
 import com.io.example.mapper.JsonMapper;
-import com.io.example.producer.KafkaProducerServiceImpl;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
