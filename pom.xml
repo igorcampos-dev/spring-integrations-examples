@@ -15,6 +15,7 @@
         <module>spring-kafka-example</module>
         <module>spring-prometheus-grafana-example</module>
         <module>spring-keycloak-example</module>
+        <module>spring-jasper-example</module>
     </modules>
 
 </project>

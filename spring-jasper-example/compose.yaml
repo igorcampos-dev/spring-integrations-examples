@@ -1,0 +1,9 @@
+services:
+
+  app:
+    build:
+      context: .
+    ports:
+      - "80:80"
+    environment:
+      SPRING_PROFILES_ACTIVE: prd

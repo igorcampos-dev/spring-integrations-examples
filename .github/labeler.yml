@@ -10,6 +10,10 @@
   - changed-files:
       - any-glob-to-any-file: 'spring-keycloak-example/**/*'
 
+"project: spring-jasper-example":
+  - changed-files:
+      - any-glob-to-any-file: 'spring-jasper-example/**/*'
+
 "type: dependency-upgrade":
   - changed-files:
       - any-glob-to-any-file: "**/pom.xml"
