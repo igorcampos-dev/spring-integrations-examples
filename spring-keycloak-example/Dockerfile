@@ -20,9 +20,11 @@ RUN --mount=type=bind,source=pom.xml,target=pom.xml \
 
 FROM eclipse-temurin:21.0.8_9-jre-jammy AS final
 
-RUN apt-get update && apt-get install -y nginx supervisor && rm -rf /var/lib/apt/lists/* #IT IS NOT NECESSARY IN PRODUCTION
-COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf #IT IS NOT NECESSARY IN PRODUCTION
-COPY docker/nginx/supervisord.conf /etc/supervisor/conf.d/supervisord.conf #IT IS NOT NECESSARY IN PRODUCTION
+#<IT IS NOT NECESSARY IN PRODUCTION ---
+RUN apt-get update && apt-get install -y nginx supervisor && rm -rf /var/lib/apt/lists/*
+COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY docker/nginx/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+#--- IT IS NOT NECESSARY IN PRODUCTION>
 
 COPY --from=package /build/target/app.jar /app/app.jar
 
