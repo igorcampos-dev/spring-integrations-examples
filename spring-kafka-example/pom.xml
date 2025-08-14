@@ -13,7 +13,7 @@
 
 	<groupId>com.io</groupId>
 	<artifactId>spring-kafka-example</artifactId>
-	<version>1.0</version>
+	<version>1.0.0</version>
 
 	<name>spring-kafka-example</name>
 	<description>Example project using Kafka</description>
