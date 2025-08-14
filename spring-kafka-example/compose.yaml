@@ -1,7 +1,6 @@
 services:
 
   app:
-    container_name: app
     build:
       context: .
     ports:
@@ -23,7 +22,6 @@ services:
 
   kafka:
     image: apache/kafka:4.0.0
-    container_name: kafka
     ports:
       - "9092:9092"
       - "9093:9093"
@@ -43,7 +41,6 @@ services:
       - kafka-net
 
   kafka-init:
-    container_name: kafka-init
     image: apache/kafka:4.0.0
     depends_on:
       kafka:

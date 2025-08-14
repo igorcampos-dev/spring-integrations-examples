@@ -2,7 +2,6 @@
 services:
 
   app:
-    container_name: app
     build:
       context: .
       dockerfile: Dockerfile
@@ -24,7 +23,6 @@ services:
       - spring_keycloak
 
   keycloak:
-    container_name: keycloak
     build:
       context: .
       dockerfile: Dockerfile.keycloak
@@ -58,7 +56,6 @@ services:
 
   keycloak-database:
     image: postgres:17.5-alpine3.22
-    container_name: keycloak-database
     environment:
       POSTGRES_USER: postgres #⚠️ DO NOT USE IN PRODUCTION
       POSTGRES_PASSWORD: password #⚠️ DO NOT USE IN PRODUCTION
