@@ -13,7 +13,7 @@
 
 	<groupId>com.io</groupId>
 	<artifactId>spring-keycloak-example</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>spring-keycloak-example</name>
 	<description>Example of a Java Spring integration with Keycloak, various types of authentication</description>
 

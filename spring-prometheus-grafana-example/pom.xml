@@ -13,7 +13,7 @@
 
 	<groupId>com.io</groupId>
 	<artifactId>spring-prometheus-grafana-example</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>spring-prometheus-grafana-example</name>
 	<description>Example project using Java + Prometheus + Grafana</description>
 
