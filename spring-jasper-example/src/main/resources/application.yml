@@ -2,4 +2,4 @@
 spring:
 
   application:
-    name: spring-jasper-example-dev
+    name: spring-jasper-example-prd
