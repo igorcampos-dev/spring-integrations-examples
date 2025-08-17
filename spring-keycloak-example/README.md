@@ -25,7 +25,7 @@ Includes a minimal setup for running a Spring Boot application secured by Keyclo
 
 - **Port:** `8083`
 
-- **Spring Profile:** `OIDC`
+- **Spring Profile:** `OIDC` (this profile active module 'oidcAuth')
 
 - **Backup keycloak:** `oidc_auth_db_backup.sql`
 
