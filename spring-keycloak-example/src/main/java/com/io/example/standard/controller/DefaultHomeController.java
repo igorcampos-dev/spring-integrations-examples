@@ -1,4 +1,4 @@
-package com.io.example.controller;
+package com.io.example.standard.controller;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.GetMapping;

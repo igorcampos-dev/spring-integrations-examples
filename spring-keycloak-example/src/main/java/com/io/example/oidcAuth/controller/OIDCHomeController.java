@@ -1,4 +1,4 @@
-package com.io.example.controller;
+package com.io.example.oidcAuth.controller;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
