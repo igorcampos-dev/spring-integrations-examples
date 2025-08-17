@@ -1,0 +1,11 @@
+services:
+
+  app:
+    container_name: app
+    build:
+      context: .
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_PROFILES_ACTIVE: client-list-dev
+      SERVER_PORT: 8082
