@@ -20,7 +20,7 @@
 	<properties>
 		<java.version>21</java.version>
 		<spring.boot.version>3.5.4</spring.boot.version>
-		<spring.security.version>6.5.2</spring.security.version>
+		<spring.security.version>6.5.3</spring.security.version>
 		<lombok.version>1.18.38</lombok.version>
 		<maven.plugins.version>3.14.0</maven.plugins.version>
 	</properties>
