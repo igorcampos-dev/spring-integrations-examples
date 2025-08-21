@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.4</version>
+		<version>3.5.5</version>
 		<relativePath/>
 	</parent>
 
@@ -19,7 +19,7 @@
 
 	<properties>
 		<java.version>21</java.version>
-		<spring.boot.version>3.5.4</spring.boot.version>
+		<spring.boot.version>3.5.5</spring.boot.version>
 		<io.micrometer.version>1.15.3</io.micrometer.version>
 	</properties>
 
