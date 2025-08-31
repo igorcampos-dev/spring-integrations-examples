@@ -4,4 +4,4 @@ server:
 spring:
 
   application:
-    name: spring-jasper-exampleclient-list-local
+    name: spring-jasper-example-client-list-local
