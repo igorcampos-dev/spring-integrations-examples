@@ -1,0 +1,182 @@
+<!-- Created with Jaspersoft Studio version 7.0.3.final using JasperReports Library version 7.0.3-41034ca841d452f3305ba55b9042260aaa1ab5dd  -->
+<jasperReport name="DataUsageBill" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c5680c44-5f77-43e1-8d22-9d5f1778f00a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<query language="sql"><![CDATA[]]></query>
+	<field name="orgName" class="java.lang.String"/>
+	<field name="depName" class="java.lang.String"/>
+	<field name="devName" class="java.lang.String"/>
+	<field name="groupName" class="java.lang.String"/>
+	<field name="dayStart" class="java.lang.String"/>
+	<field name="dayEnd" class="java.lang.String"/>
+	<field name="dtoOM" class="java.lang.Integer"/>
+	<field name="dtoON" class="java.lang.Integer"/>
+	<field name="dtoOL" class="java.lang.Integer"/>
+	<field name="dtoDL" class="java.lang.Integer"/>
+	<field name="dtoDN" class="java.lang.Integer"/>
+	<field name="dtoD" class="java.lang.Integer"/>
+	<field name="totalHrs" class="java.lang.Integer"/>
+	<field name="dtoOMamount" class="java.lang.Integer"/>
+	<field name="dtoONamount" class="java.lang.Integer"/>
+	<field name="dtoOLamount" class="java.lang.Integer"/>
+	<field name="dtoDLamount" class="java.lang.Integer"/>
+	<field name="dtoDNamount" class="java.lang.Integer"/>
+	<field name="dtoDamount" class="java.lang.Integer"/>
+	<field name="toltalAm" class="java.lang.Integer"/>
+	<variable name="toltalAm1" resetType="Column" calculation="Sum" class="java.lang.Integer">
+		<expression><![CDATA[$F{toltalAm}]]></expression>
+	</variable>
+	<background splitType="Stretch"/>
+	<title height="156" splitType="Stretch">
+		<element kind="rectangle" uuid="50312856-42b0-43f4-9483-06d8fe503412" mode="Opaque" x="-1" y="56" width="329" height="100" forecolor="#D9D7E0" backcolor="#D9D7E0" radius="15"/>
+		<element kind="staticText" uuid="fbf42f07-8a0a-4f7f-a7d9-1b325c83670f" stretchType="ElementGroupHeight" x="60" y="10" width="90" height="40" fontSize="26.0" bold="true">
+			<text><![CDATA[LOGO]]></text>
+		</element>
+		<element kind="staticText" uuid="8c715988-6da5-4761-a9b0-f04b284f39e7" x="240" y="-10" width="70" height="20" forecolor="#525252" fontSize="12.0" bold="true">
+			<text><![CDATA[INVOICE]]></text>
+			<box leftPadding="10"/>
+		</element>
+		<element kind="staticText" uuid="3ee170a9-03ed-4539-bc81-4edd6ebfbc29" x="20" y="70" width="100" height="20">
+			<text><![CDATA[Organization Name]]></text>
+		</element>
+		<element kind="staticText" uuid="c7dfbb91-16e7-4a72-b7dd-852c724ea867" x="20" y="90" width="100" height="20">
+			<text><![CDATA[Department Name]]></text>
+		</element>
+		<element kind="staticText" uuid="267f032d-a98a-4177-b5b9-757dba3a7a27" x="20" y="110" width="100" height="20">
+			<text><![CDATA[Devision Name]]></text>
+		</element>
+		<element kind="staticText" uuid="eb345a07-991c-4aba-9088-e71e38237921" x="20" y="130" width="100" height="20">
+			<text><![CDATA[Group Name]]></text>
+		</element>
+		<element kind="staticText" uuid="0ea065e5-47b1-4a21-8189-172cc1a9fe8b" x="210" y="10" width="60" height="13">
+			<text><![CDATA[Invoice Date:]]></text>
+		</element>
+		<element kind="textField" uuid="fed3f44e-c42d-4e85-8eb3-7a6d405e07ec" x="270" y="10" width="100" height="13" fontSize="10.0" pattern="MMMMM dd, yyyy">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="textField" uuid="70a5b8dc-2c16-413f-af39-93f36a8689b8" x="170" y="70" width="180" height="19">
+			<expression><![CDATA[$F{orgName}]]></expression>
+		</element>
+		<element kind="textField" uuid="0e07e32e-62ef-40d9-ba1e-d5b1e757a2b5" x="170" y="90" width="180" height="21">
+			<expression><![CDATA[$F{depName}]]></expression>
+		</element>
+		<element kind="textField" uuid="fb083231-e511-4c79-af82-4fa2549cba04" x="170" y="130" width="180" height="20">
+			<expression><![CDATA[$F{devName}]]></expression>
+		</element>
+		<element kind="textField" uuid="4106684d-ae0b-4bcd-b1fd-02cd6dda7478" x="170" y="110" width="180" height="20">
+			<expression><![CDATA[$F{groupName}]]></expression>
+		</element>
+	</title>
+	<pageHeader height="55" splitType="Stretch">
+		<element kind="rectangle" uuid="52c8688f-3f1c-4a00-ba40-27ebaf036b39" x="-20" y="0" width="600" height="40" forecolor="#E88580" backcolor="#E88580"/>
+		<element kind="staticText" uuid="0d1be6a9-a186-4eab-8ce1-ea25e5ea1e80" mode="Transparent" x="20" y="10" width="100" height="30" forecolor="#FFFFFF" fontSize="14.0" bold="true">
+			<text><![CDATA[Bill Period]]></text>
+		</element>
+		<element kind="textField" uuid="f898aad7-3b3e-41ea-bbe5-79392d6a32a0" x="125" y="10" width="100" height="30" fontSize="14.0">
+			<expression><![CDATA[$F{dayStart}]]></expression>
+		</element>
+		<element kind="textField" uuid="133e7944-09e7-4d77-80ed-baf80b2ae5b7" x="225" y="10" width="100" height="30" fontSize="14.0">
+			<expression><![CDATA[$F{dayEnd}]]></expression>
+		</element>
+	</pageHeader>
+	<detail>
+		<band height="287" splitType="Stretch">
+			<element kind="rectangle" uuid="8e62a290-d7a6-4684-bf57-d36d9788b582" mode="Transparent" x="1" y="1" width="559" height="279" forecolor="#E3E3E3" backcolor="#E3E3E3" radius="15"/>
+			<element kind="staticText" uuid="e1f750b3-721a-4ce9-afa0-6c35c3a97031" x="20" y="20" width="150" height="30" fontSize="20.0" bold="true">
+				<text><![CDATA[Billing Details]]></text>
+			</element>
+			<element kind="staticText" uuid="f25ebef8-da40-40fb-96b5-1f3612e9c5c8" x="340" y="50" width="100" height="20" fontSize="12.0" bold="true">
+				<text><![CDATA[Total Hrs]]></text>
+			</element>
+			<element kind="staticText" uuid="0e90aeca-6c92-457b-bfc0-4c51584d3b86" x="440" y="50" width="100" height="20" fontSize="12.0" bold="true">
+				<text><![CDATA[Amount]]></text>
+			</element>
+			<element kind="staticText" uuid="2536ee7b-77da-4f7a-a27a-414e6020d18e" x="20" y="80" width="150" height="25">
+				<text><![CDATA[Dialog to other Mobile]]></text>
+			</element>
+			<element kind="staticText" uuid="0c908079-bb0d-4368-8b48-d887101616a4" x="20" y="105" width="150" height="25">
+				<text><![CDATA[Dialog to other Nation]]></text>
+			</element>
+			<element kind="staticText" uuid="8daeafba-824a-44c9-a1d7-9e2c00af0935" x="20" y="130" width="150" height="25">
+				<text><![CDATA[Dialog to other Local]]></text>
+			</element>
+			<element kind="staticText" uuid="c266729b-d945-453b-8b17-d8972e0425d9" x="20" y="155" width="150" height="25">
+				<text><![CDATA[Dialog to Dialog Local]]></text>
+			</element>
+			<element kind="staticText" uuid="c73a52ab-085b-4382-92df-c96095f8a120" x="20" y="180" width="150" height="25">
+				<text><![CDATA[Dialog to Dialog Nation]]></text>
+			</element>
+			<element kind="staticText" uuid="68ed4139-ee46-43d5-8648-c58f82ccd861" x="20" y="205" width="150" height="25">
+				<text><![CDATA[Dialog to Dialog]]></text>
+			</element>
+			<element kind="staticText" uuid="3ce0e43f-4fde-44f4-88f7-3114ad29dcf6" x="20" y="229" width="310" height="32" fontSize="16.0" bold="true">
+				<text><![CDATA[Total Amount Payable]]></text>
+			</element>
+			<element kind="textField" uuid="d5766b46-9e2a-4099-9685-62bd1c1532f4" x="340" y="80" width="100" height="25">
+				<expression><![CDATA[$F{dtoOM}]]></expression>
+				<box leftPadding="12"/>
+			</element>
+			<element kind="textField" uuid="1f9d2214-c004-439b-9d9f-afee8a87a387" x="340" y="105" width="100" height="25">
+				<expression><![CDATA[$F{dtoON}]]></expression>
+				<box leftPadding="12"/>
+			</element>
+			<element kind="textField" uuid="1ce53a8e-2436-4c4a-9a06-51945f4ea130" x="340" y="130" width="100" height="25">
+				<expression><![CDATA[$F{dtoOL}]]></expression>
+				<box leftPadding="12"/>
+			</element>
+			<element kind="textField" uuid="61303e2b-970e-46f3-9fa7-647c9a620159" x="340" y="155" width="100" height="25">
+				<expression><![CDATA[$F{dtoDL}]]></expression>
+				<box leftPadding="12"/>
+			</element>
+			<element kind="textField" uuid="54822506-3d5f-488a-8c65-870b232a8f8c" x="340" y="180" width="100" height="25">
+				<expression><![CDATA[$F{dtoDN}]]></expression>
+				<box leftPadding="12"/>
+			</element>
+			<element kind="textField" uuid="3ed9548c-0ef8-413f-93f9-d523517a1d6a" x="340" y="205" width="100" height="25">
+				<expression><![CDATA[$F{dtoD}]]></expression>
+				<box leftPadding="12"/>
+			</element>
+			<element kind="textField" uuid="6483d2fc-945d-4325-8bb2-3656539e0070" x="340" y="235" width="100" height="30">
+				<expression><![CDATA[$F{totalHrs}]]></expression>
+				<box leftPadding="12"/>
+			</element>
+			<element kind="rectangle" uuid="3e9b73c4-b19e-481f-bdc4-271bf70cd79a" x="310" y="220" width="200" height="1" backcolor="#000000"/>
+			<element kind="rectangle" uuid="711de52e-c8c6-4f70-9d8f-0f2ce379511f" x="310" y="260" width="200" height="1" backcolor="#000000"/>
+			<element kind="rectangle" uuid="5720ef77-4da2-4e8b-b817-3d1abfa318cf" x="310" y="250" width="200" height="1" backcolor="#000000"/>
+			<element kind="textField" uuid="40d28c41-8840-4cdb-8776-18863a6ac025" x="440" y="80" width="101" height="25">
+				<expression><![CDATA[$F{dtoOMamount}]]></expression>
+				<box leftPadding="10"/>
+			</element>
+			<element kind="textField" uuid="3ce3e918-29da-4f85-9967-8bac7a2c56d7" x="440" y="102" width="101" height="28">
+				<expression><![CDATA[$F{dtoONamount}]]></expression>
+				<box leftPadding="10"/>
+			</element>
+			<element kind="textField" uuid="857ee5e2-b80a-4dd1-944f-cee64d011f6e" x="440" y="130" width="101" height="25">
+				<expression><![CDATA[$F{dtoOLamount}]]></expression>
+				<box leftPadding="10"/>
+			</element>
+			<element kind="textField" uuid="aaa960c4-c2f2-4759-a57d-3c03080e6b8e" x="440" y="155" width="100" height="24">
+				<expression><![CDATA[$F{dtoDLamount}]]></expression>
+				<box leftPadding="10"/>
+			</element>
+			<element kind="textField" uuid="464f3752-1f0e-4dc1-85fd-45c2dcfcdeec" x="440" y="180" width="100" height="24">
+				<expression><![CDATA[$F{dtoDNamount}]]></expression>
+				<box leftPadding="10"/>
+			</element>
+			<element kind="textField" uuid="3cc9ea12-51a7-4be0-8d06-3a2eb00f2eac" x="440" y="205" width="100" height="24">
+				<expression><![CDATA[$F{dtoDamount}]]></expression>
+				<box leftPadding="10"/>
+			</element>
+			<element kind="textField" uuid="873a89fc-e601-4ab3-8758-d2094535ea00" x="440" y="235" width="100" height="30">
+				<expression><![CDATA[$F{toltalAm}]]></expression>
+				<box leftPadding="10"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="75" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch">
+		<element kind="textField" uuid="b77b1a24-e20c-41d6-b514-c8de6b141529" x="230" y="30" width="100" height="20">
+			<expression><![CDATA["PAGE : " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+	</pageFooter>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

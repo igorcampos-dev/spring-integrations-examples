@@ -19,6 +19,7 @@ Includes loading `.jasper` templates, populating them with mock data, and export
 
 ## Profiles you can activate
 
-- **client-list-dev** – Used in Docker, in the future, it will use pre-compiled `.jasper` files instead of `.jrxml`. Activates the internal module that generates a simple client report.
+- **client-list-dev** – Used in Docker, Activates the internal module that generates a simple client report.
 - **client-list-local** – Used locally, activates the internal module that generates a simple client report and use `.jrxml`.
-
+- **bill-dev** – Used in Docker, Activates the internal module that generates a simple bill report.
+- **bill-local** – Used locally, activates the internal module that generates a simple bill report and use `.jrxml`.
