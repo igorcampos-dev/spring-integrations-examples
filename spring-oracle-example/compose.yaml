@@ -1,0 +1,32 @@
+services:
+
+  app:
+    build:
+      context: .
+    restart: unless-stopped
+    depends_on:
+      - oracle-db
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SERVER_PORT: 8080
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@oracle-db:1521/XEPDB1
+      SPRING_DATASOURCE_USERNAME: TEST_SCHEMA
+      SPRING_DATASOURCE_PASSWORD: Ag101Pwd123
+      SPRING_DATASOURCE_DRIVER: oracle.jdbc.OracleDriver
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: true
+      SPRING_HIBERNATE_DIALECT: org.hibernate.dialect.OracleDialect
+    ports:
+      - "8080:8080"
+
+  oracle-db:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle-xe
+    restart: unless-stopped
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: "Admin123"
+    shm_size: 1g
+    volumes:
+      - ./docker/oracle:/docker-entrypoint-initdb.d
