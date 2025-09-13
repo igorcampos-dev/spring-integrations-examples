@@ -61,7 +61,7 @@ jobs:
           down-flags: '--volumes'
 
       - name: Wait for containers to initialize
-        run: sleep 20
+        run: sleep 30
 
       - name: Check container health
         run: |
