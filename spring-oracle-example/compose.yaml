@@ -19,8 +19,8 @@ services:
       - "8080:8080"
 
   oracle-db:
+    container_name: oracle-db
     image: gvenzl/oracle-xe:21-slim
-    container_name: oracle-xe
     ports:
       - "1521:1521"
     environment:
