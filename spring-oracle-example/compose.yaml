@@ -3,7 +3,6 @@ services:
   app:
     build:
       context: .
-    restart: unless-stopped
     depends_on:
       - oracle-db
     environment:
@@ -22,7 +21,6 @@ services:
   oracle-db:
     image: gvenzl/oracle-xe:21-slim
     container_name: oracle-xe
-    restart: unless-stopped
     ports:
       - "1521:1521"
     environment:
