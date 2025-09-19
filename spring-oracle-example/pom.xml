@@ -21,7 +21,7 @@
 		<java.version>21</java.version>
         <spring.boot.version>3.5.5</spring.boot.version>
         <lombok.version>1.18.42</lombok.version>
-        <oracle.database.version>23.7.0.25.01</oracle.database.version>
+        <oracle.database.version>23.9.0.25.07</oracle.database.version>
         <maven.compiler.plugin.version>3.14.0</maven.compiler.plugin.version>
 	</properties>
 
