@@ -1,6 +1,7 @@
 services:
 
   app:
+    container_name: app
     build:
       context: .
     depends_on:
