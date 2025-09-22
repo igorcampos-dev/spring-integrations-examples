@@ -22,7 +22,7 @@
 		<spring.boot.version>3.5.6</spring.boot.version>
 		<spring.security.version>6.5.5</spring.security.version>
 		<lombok.version>1.18.42</lombok.version>
-		<maven.plugins.version>3.14.0</maven.plugins.version>
+		<maven.plugins.version>3.14.1</maven.plugins.version>
 	</properties>
 
 	<dependencies>
