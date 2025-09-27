@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21.0.8_9-jdk-jammy as deps
+FROM eclipse-temurin:25-jdk-jammy as deps
 
 WORKDIR /build
 
@@ -18,7 +18,7 @@ RUN --mount=type=bind,source=pom.xml,target=pom.xml \
     ./mvnw package -DskipTests && \
     mv target/$(./mvnw help:evaluate -Dexpression=project.artifactId -q -DforceStdout)-$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout).jar target/app.jar
 
-FROM eclipse-temurin:21.0.8_9-jre-jammy AS final
+FROM eclipse-temurin:25-jre-jammy AS final
 
 #<IT IS NOT NECESSARY IN PRODUCTION ---
 RUN apt-get update && apt-get install -y nginx supervisor && rm -rf /var/lib/apt/lists/*
