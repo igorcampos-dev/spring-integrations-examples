@@ -53,7 +53,7 @@ jobs:
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Start containers with Compose Action
-        uses: hoverkraft-tech/compose-action@v2.3.0
+        uses: hoverkraft-tech/compose-action@v2.4.0
         with:
           compose-file: './spring-prometheus-grafana-example/compose.yaml'
           services: ${{ steps.services.outputs.services }}
