@@ -1,8 +1,8 @@
 #!/bin/sh
 # entrypoint.sh
 
-echo "Aguardando 30 segundos..."
+echo "Waiting 30 seconds..."
 sleep 30
 
-echo "Iniciando a aplicação..."
+echo "Starting the application..."
 exec java org.springframework.boot.loader.launch.JarLauncher
