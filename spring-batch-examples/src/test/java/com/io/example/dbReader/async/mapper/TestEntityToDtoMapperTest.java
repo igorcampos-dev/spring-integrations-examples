@@ -12,6 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @ExtendWith(MockitoExtension.class)
+@DisplayName("Unit tests for TestEntityToDtoMapper")
 public class TestEntityToDtoMapperTest{
 
     @InjectMocks
