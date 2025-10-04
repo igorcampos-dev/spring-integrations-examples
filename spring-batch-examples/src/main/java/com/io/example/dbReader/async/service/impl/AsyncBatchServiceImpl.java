@@ -9,8 +9,8 @@ import org.springframework.batch.core.explore.JobExplorer;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.stereotype.Service;
 
-@Service
 @Slf4j
+@Service
 @RequiredArgsConstructor
 public class AsyncBatchServiceImpl implements AsyncBatchService {
 
@@ -37,7 +37,7 @@ public class AsyncBatchServiceImpl implements AsyncBatchService {
     public BatchStatus getJobStatus(Long jobId) {
         JobExecution jobExecution = jobExplorer.getJobExecution(jobId);
         if (jobExecution == null) {
-            throw new BusinessException("JobExecution não encontrado para id: " + jobId);
+            throw new BusinessException("JobExecution not found for this id: " + jobId);
         }
         return jobExecution.getStatus();
     }
