@@ -18,6 +18,7 @@ import org.springframework.batch.item.database.JdbcPagingItemReader;
 import org.springframework.batch.item.database.Order;
 import org.springframework.batch.item.database.builder.JdbcPagingItemReaderBuilder;
 import org.springframework.batch.item.database.support.H2PagingQueryProvider;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.AsyncTaskExecutor;
@@ -96,12 +97,15 @@ public class AsyncBatchConfig {
     }
 
     @Bean
-    public JdbcPagingItemReader<TestEntity> asyncReader(DataSource dataSource) {
+    public JdbcPagingItemReader<TestEntity> asyncReader(
+            DataSource dataSource,
+            @Value("${spring.batch.batch-size}") int batchSize
+    ) {
         return new JdbcPagingItemReaderBuilder<TestEntity>()
                 .name("asyncReader")
                 .dataSource(dataSource)
                 .queryProvider(createQueryProvider())
-                .pageSize(1000)
+                .pageSize(batchSize)
                 .rowMapper(new BeanPropertyRowMapper<>(TestEntity.class))
                 .build();
     }
