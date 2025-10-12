@@ -26,6 +26,7 @@
         <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
         <instancio.version>5.5.1</instancio.version>
         <poi.ooxml.version>5.4.1</poi.ooxml.version>
+        <spring.batch.excel.version>0.1.1</spring.batch.excel.version>
     </properties>
 
 	<dependencies>
@@ -91,7 +92,7 @@
         <dependency>
             <groupId>org.springframework.batch.extensions</groupId>
             <artifactId>spring-batch-excel</artifactId>
-            <version>0.1.1</version>
+            <version>${spring.batch.excel.version}</version>
         </dependency>
 
         <dependency>
