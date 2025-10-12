@@ -1,7 +1,7 @@
 package com.io.example.dbReader.async.controller;
 
 import com.io.example.dbReader.async.exception.BusinessException;
-import com.io.example.dbReader.async.service.AsyncBatchService;
+import com.io.example.dbReader.async.service.AsyncDBBatchService;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -28,13 +28,13 @@ class TestControllerTest {
     private MockMvc mockMvc;
 
     @MockitoBean
-    private AsyncBatchService asyncBatchService;
+    private AsyncDBBatchService asyncDBBatchService;
 
     @Test
     @DisplayName("GET /job/process → should return job ID when service runs successfully")
     void shouldReturnJobIdWhenProcessJobIsCalled() throws Exception {
 
-        when(asyncBatchService.runJob()).thenReturn(jobId);
+        when(asyncDBBatchService.runJob()).thenReturn(jobId);
 
         mockMvc.perform(get("/job/process")
                 .accept(MediaType.APPLICATION_JSON))
@@ -47,7 +47,7 @@ class TestControllerTest {
     @DisplayName("GET /job/{jobId}/status → should return correct status for each BatchStatus")
     void shouldReturnJobStatusForAllBatchStatuses(BatchStatus status) throws Exception {
 
-        when(asyncBatchService.getJobStatus(jobId)).thenReturn(status);
+        when(asyncDBBatchService.getJobStatus(jobId)).thenReturn(status);
 
         mockMvc.perform(get("/job/{jobId}/status", jobId)
                         .accept(MediaType.APPLICATION_JSON))
@@ -59,7 +59,7 @@ class TestControllerTest {
     @DisplayName("GET /job/{jobId}/status → should return 404 when job ID is invalid")
     void shouldReturn404WhenJobIdIsInvalid() throws Exception {
 
-        when(asyncBatchService.getJobStatus(jobId))
+        when(asyncDBBatchService.getJobStatus(jobId))
                 .thenThrow(new BusinessException("JobExecution not found for this id: " + jobId));
 
         mockMvc.perform(get("/job/{jobId}/status", jobId)

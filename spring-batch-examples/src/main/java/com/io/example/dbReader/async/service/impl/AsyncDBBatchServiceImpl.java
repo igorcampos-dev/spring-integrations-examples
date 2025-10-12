@@ -1,7 +1,7 @@
 package com.io.example.dbReader.async.service.impl;
 
 import com.io.example.dbReader.async.exception.BusinessException;
-import com.io.example.dbReader.async.service.AsyncBatchService;
+import com.io.example.dbReader.async.service.AsyncDBBatchService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.*;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class AsyncBatchServiceImpl implements AsyncBatchService {
+public class AsyncDBBatchServiceImpl implements AsyncDBBatchService {
 
     private final JobLauncher asyncJobLauncher;
     private final Job asyncBatchJob;

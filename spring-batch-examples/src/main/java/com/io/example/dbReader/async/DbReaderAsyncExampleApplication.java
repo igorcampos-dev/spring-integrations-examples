@@ -1,13 +1,13 @@
-package com.io.example;
+package com.io.example.dbReader.async;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBatchExampleApplication {
+public class DbReaderAsyncExampleApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBatchExampleApplication.class, args);
+		SpringApplication.run(DbReaderAsyncExampleApplication.class, args);
 	}
 
 }

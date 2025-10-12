@@ -1,7 +1,7 @@
 package com.io.example.dbReader.async.service;
 
 import com.io.example.dbReader.async.exception.BusinessException;
-import com.io.example.dbReader.async.service.impl.AsyncBatchServiceImpl;
+import com.io.example.dbReader.async.service.impl.AsyncDBBatchServiceImpl;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,7 +22,7 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayName("Unit tests for AsyncBatchServiceImpl")
-class AsyncBatchServiceImplUnitTest {
+class AsyncDBBatchServiceImplUnitTest {
 
     private static final Long jobId = Instancio.create(Long.class);
 
@@ -36,7 +36,7 @@ class AsyncBatchServiceImplUnitTest {
     private JobExplorer jobExplorer;
 
     @InjectMocks
-    private AsyncBatchServiceImpl asyncBatchService;
+    private AsyncDBBatchServiceImpl asyncBatchService;
 
     @Test
     @DisplayName("Should run job successfully and return job execution id")
