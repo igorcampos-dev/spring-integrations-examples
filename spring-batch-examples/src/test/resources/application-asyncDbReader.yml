@@ -1,7 +1,0 @@
-spring:
-
-  batch:
-    initialize-schema: always
-    job:
-      enabled: false
-    batch-size: 1

@@ -101,7 +101,13 @@
             <version>${poi.ooxml.version}</version>
         </dependency>
 
-	</dependencies>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-s3</artifactId>
+            <version>1.12.777</version>
+        </dependency>
+
+    </dependencies>
 
 	<build>
 		<plugins>
