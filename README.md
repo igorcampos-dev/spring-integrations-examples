@@ -16,7 +16,8 @@ Below you will find a summary table of each subproject. For more details, please
 
 | Name                                                                      | Description                                                                       |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| [Spring Boot + Spring Batch](./spring-batch-examples)                     | Spring batch examples.                                                            |
+| [Spring Boot + Spring Batch + Database](./spring-batch-db-examples)       | Demonstrates a basic integration between Spring Batch and Databases               |
+| [Spring Boot + Spring Batch + File](./spring-batch-file-examples)         | Demonstrates a basic integration between Spring Batch and Files                   |
 | [Spring Boot + Jasper](./spring-jasper-example)                           | Demonstrates a basic integration between Spring Boot and Jasper.                  |
 | [Spring Boot + Kafka](./spring-kafka-example)                             | Demonstrates a basic integration between Spring Boot and Apache Kafka.            |
 | [Spring Boot + Keycloak](./spring-keycloak-example)                       | Demonstrates a basic integration between Spring Boot and Keycloak.                |
