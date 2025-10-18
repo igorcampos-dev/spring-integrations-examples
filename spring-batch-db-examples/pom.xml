@@ -13,7 +13,7 @@
 
 	<groupId>com.io</groupId>
 	<artifactId>spring-batch-db-examples</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>spring-batch-db-examples</name>
 	<description>Demo project for Spring Boot</description>
 
