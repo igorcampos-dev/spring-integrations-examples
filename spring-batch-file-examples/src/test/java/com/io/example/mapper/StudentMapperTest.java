@@ -1,12 +1,13 @@
 package com.io.example.mapper;
 
 import com.io.example.dto.StudentDto;
-import org.junit.jupiter.api.Test;
 import org.instancio.Instancio;
+import org.junit.jupiter.api.Test;
 import org.springframework.batch.extensions.excel.support.rowset.RowSet;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class StudentMapperTest {
 

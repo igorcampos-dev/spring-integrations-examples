@@ -1,9 +1,9 @@
 package com.io.example.config;
 
-import com.io.example.model.dto.TestDto;
-import com.io.example.model.entity.TestEntity;
 import com.io.example.listener.LoggingStepListener;
 import com.io.example.mapper.TestEntityMapper;
+import com.io.example.model.dto.TestDto;
+import com.io.example.model.entity.TestEntity;
 import com.io.example.service.TestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Step;

@@ -1,11 +1,11 @@
 package com.io.example.config;
 
-import com.io.example.service.TestService;
 import com.io.example.dto.StudentDto;
 import com.io.example.mapper.StudentMapper;
+import com.io.example.service.TestService;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.extensions.excel.poi.PoiItemReader;
@@ -17,7 +17,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
 import org.springframework.transaction.PlatformTransactionManager;
