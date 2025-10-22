@@ -9,11 +9,11 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: default
       SERVER_PORT: 8080
-      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@oracle-db:1521/XEPDB1
-      SPRING_DATASOURCE_USERNAME: TEST_SCHEMA
-      SPRING_DATASOURCE_PASSWORD: Ag101Pwd123
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@oracle-db:1521
+      SPRING_DATASOURCE_USERNAME: developer
+      SPRING_DATASOURCE_PASSWORD: developer
       SPRING_DATASOURCE_DRIVER: oracle.jdbc.OracleDriver
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_HIBERNATE_DDL_AUTO: none
       SPRING_JPA_SHOW_SQL: true
       SPRING_HIBERNATE_DIALECT: org.hibernate.dialect.OracleDialect
     ports:
@@ -29,3 +29,4 @@ services:
     shm_size: 1g
     volumes:
       - ./docker/oracle:/docker-entrypoint-initdb.d
+      - ./src/main/resources/sql:/docker-entrypoint-initdb.d
