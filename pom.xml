@@ -17,6 +17,7 @@
         <module>spring-keycloak-example</module>
         <module>spring-jasper-example</module>
         <module>spring-oracle-example</module>
+        <module>spring-multimodule-example</module>
     </modules>
 
 </project>
