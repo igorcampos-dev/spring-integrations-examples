@@ -18,6 +18,7 @@
         <module>spring-jasper-example</module>
         <module>spring-oracle-example</module>
         <module>spring-multimodule-example</module>
+        <module>spring-databases-example</module>
     </modules>
 
 </project>
