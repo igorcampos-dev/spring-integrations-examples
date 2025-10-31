@@ -22,6 +22,7 @@
     <modules>
       <module>postgres-example</module>
       <module>mysql-example</module>
+      <module>oracle-example</module>
     </modules>
 
 </project>
