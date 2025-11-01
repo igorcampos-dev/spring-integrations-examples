@@ -20,7 +20,7 @@
         <java.version>21</java.version>
         <spring.boot.version>3.5.7</spring.boot.version>
         <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
-        <mysql.version>9.4.0</mysql.version>
+        <mysql.version>9.5.0</mysql.version>
         <h2database.version>2.4.240</h2database.version>
     </properties>
 
