@@ -5,4 +5,4 @@ echo "Waiting 30 seconds..."
 sleep 30
 
 echo "Starting the application..."
-exec java org.springframework.boot.loader.launch.JarLauncher
+exec java -jar app.jar

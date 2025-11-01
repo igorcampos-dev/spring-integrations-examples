@@ -6,10 +6,18 @@ services:
       context: .
     ports:
       - "8081:8081"
+    environment:
+      SPRING_PROFILES_ACTIVE: prd
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-db:5432/myapp_db
+      SPRING_DATASOURCE_USERNAME: myapp_user
+      SPRING_DATASOURCE_PASSWORD: user123
+      SPRING_DATASOURCE_DRIVER: org.postgresql.Driver
+      SPRING_JPA_HIBERNATE_DDL_AUTO: none
+      SPRING_JPA_SHOW_SQL: false
 
-  postgres:
+  postgres-db:
     image: postgres:17
-    container_name: postgres-container
+    container_name: postgres-db
     ports:
       - "5432:5432"
     environment:
