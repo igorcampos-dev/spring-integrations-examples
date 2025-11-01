@@ -1,23 +1,21 @@
+
 services:
 
-  app:
-    container_name: app
+  app-oracle:
+    container_name: app-oracle
     build:
       context: .
-    depends_on:
-      - oracle-db
+    ports:
+      - "8082:8082"
     environment:
-      SPRING_PROFILES_ACTIVE: default
-      SERVER_PORT: 8080
+      SPRING_PROFILES_ACTIVE: prd
+      SERVER_PORT: 8082
       SPRING_DATASOURCE_URL: jdbc:oracle:thin:@oracle-db:1521
       SPRING_DATASOURCE_USERNAME: developer
       SPRING_DATASOURCE_PASSWORD: developer
       SPRING_DATASOURCE_DRIVER: oracle.jdbc.OracleDriver
       SPRING_JPA_HIBERNATE_DDL_AUTO: none
       SPRING_JPA_SHOW_SQL: true
-      SPRING_HIBERNATE_DIALECT: org.hibernate.dialect.OracleDialect
-    ports:
-      - "8080:8080"
 
   oracle-db:
     container_name: oracle-db
@@ -29,4 +27,3 @@ services:
     shm_size: 1g
     volumes:
       - ./docker/oracle:/docker-entrypoint-initdb.d
-      - ./src/main/resources/sql:/docker-entrypoint-initdb.d

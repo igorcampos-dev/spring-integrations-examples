@@ -21,6 +21,8 @@ Below you will find a summary table of each subproject. For more details, please
 | [Spring Boot + Kafka](./spring-kafka-example)                             | Demonstrates a basic integration between Spring Boot and Apache Kafka.            |
 | [Spring Boot + Keycloak](./spring-keycloak-example)                       | Demonstrates a basic integration between Spring Boot and Keycloak.                |
 | [Spring Boot + Oracle](./spring-oracle-example)                           | Demonstrates a basic integration between Spring Boot and Oracle.                  |
+| [Spring Boot + Postgres](./spring-postgres-example)                       | Demonstrates a basic integration between Spring Boot and Postgres.                |
+| [Spring Boot + Mysql](./spring-mysql-example)                             | Demonstrates a basic integration between Spring Boot and Mysql.                   |
 | [Spring Boot + Grafana + Prometheus](./spring-prometheus-grafana-example) | Demonstrates a basic integration between Spring Boot With Grafana and Prometheus. |
 
 ---

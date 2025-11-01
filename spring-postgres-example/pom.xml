@@ -11,18 +11,18 @@
     </parent>
 
     <groupId>com.io</groupId>
-    <artifactId>spring-oracle-example</artifactId>
+    <artifactId>spring-postgres-example</artifactId>
     <version>1.0.0</version>
-    <name>spring-oracle-example</name>
-    <description>Example project using Java + Oracle</description>
+    <name>spring-postgres-example</name>
+    <description>Example project using Java + Postgres</description>
 
     <properties>
         <java.version>21</java.version>
         <spring.boot.version>3.5.7</spring.boot.version>
-        <lombok.version>1.18.42</lombok.version>
-        <oracle.database.version>23.26.0.0.0</oracle.database.version>
         <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
+        <mysql.version>9.4.0</mysql.version>
         <h2database.version>2.4.240</h2database.version>
+        <postgresql.version>42.7.8</postgresql.version>
     </properties>
 
     <dependencies>
@@ -40,10 +40,10 @@
         </dependency>
 
         <dependency>
-            <groupId>com.oracle.database.jdbc</groupId>
-            <artifactId>ojdbc11</artifactId>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
-            <version>${oracle.database.version}</version>
+            <version>${postgresql.version}</version>
         </dependency>
 
         <dependency>

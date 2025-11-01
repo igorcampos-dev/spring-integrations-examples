@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-mysql-example-dev
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/myapp_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: myapp_user
+    password: user123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      pool-name: MySQLHikariPool
+      connection-test-query: SELECT 1
+      initialization-fail-timeout: 0
+      auto-commit: true
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true

@@ -16,8 +16,10 @@
         <module>spring-prometheus-grafana-example</module>
         <module>spring-keycloak-example</module>
         <module>spring-jasper-example</module>
-        <module>spring-oracle-example</module>
         <module>spring-multimodule-example</module>
+        <module>spring-mysql-example</module>
+        <module>spring-postgres-example</module>
+        <module>spring-oracle-example</module>
     </modules>
 
 </project>

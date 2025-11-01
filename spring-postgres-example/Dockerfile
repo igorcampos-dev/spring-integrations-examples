@@ -33,11 +33,6 @@ USER appuser
 
 COPY --from=package build/target/app.jar app.jar
 
-COPY docker/java/entrypoint.sh /entrypoint.sh
-USER root
-RUN chmod +x /entrypoint.sh
-USER appuser
+EXPOSE 8081
 
-EXPOSE 8082
-
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT [ "java", "-jar", "app.jar" ]

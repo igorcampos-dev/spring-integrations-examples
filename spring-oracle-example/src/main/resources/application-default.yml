@@ -1,0 +1,29 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: spring-oracle-example-dev
+
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521
+    username: developer
+    password: developer
+    driver-class-name: oracle.jdbc.OracleDriver
+
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      pool-name: OracleHikariPool
+      connection-test-query: SELECT 1 FROM DUAL
+      initialization-fail-timeout: 0
+      auto-commit: true
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
