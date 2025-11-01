@@ -19,8 +19,9 @@
     <properties>
         <java.version>21</java.version>
         <spring.boot.version>3.5.7</spring.boot.version>
+        <lombok.version>1.18.42</lombok.version>
+        <oracle.database.version>23.26.0.0.0</oracle.database.version>
         <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
-        <oracle.database.version>23.9.0.25.07</oracle.database.version>
         <h2database.version>2.4.240</h2database.version>
     </properties>
 

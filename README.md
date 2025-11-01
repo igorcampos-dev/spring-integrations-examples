@@ -17,6 +17,7 @@ Below you will find a summary table of each subproject. For more details, please
 | Name                                                                      | Description                                                                       |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
 | [Spring Boot + Jasper](./spring-jasper-example)                           | Demonstrates a basic integration between Spring Boot and Jasper.                  |
+| [Spring Boot Multi Module](./spring-multimodule-example)                  | Basic demonstration of multi-module configuration in Spring Boot                  |
 | [Spring Boot + Kafka](./spring-kafka-example)                             | Demonstrates a basic integration between Spring Boot and Apache Kafka.            |
 | [Spring Boot + Keycloak](./spring-keycloak-example)                       | Demonstrates a basic integration between Spring Boot and Keycloak.                |
 | [Spring Boot + Oracle](./spring-oracle-example)                           | Demonstrates a basic integration between Spring Boot and Oracle.                  |
