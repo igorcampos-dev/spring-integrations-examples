@@ -2,6 +2,7 @@
 services:
 
   app-postgres:
+    container_name: app-postgres
     build:
       context: .
     ports:

@@ -2,6 +2,7 @@
 services:
 
   app-oracle:
+    container_name: app-oracle
     build:
       context: .
     ports:
