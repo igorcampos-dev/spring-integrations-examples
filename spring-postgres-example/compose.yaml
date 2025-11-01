@@ -17,7 +17,7 @@ services:
       SPRING_JPA_SHOW_SQL: false
 
   postgres-db:
-    image: postgres:17
+    image: postgres:18
     container_name: postgres-db
     ports:
       - "5432:5432"
