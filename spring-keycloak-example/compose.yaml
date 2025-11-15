@@ -57,7 +57,7 @@ services:
       - spring_keycloak
 
   keycloak-database:
-    image: postgres:18.0-alpine3.22
+    image: postgres:18.1-alpine3.22
     container_name: keycloak-database
     environment:
       POSTGRES_USER: postgres #⚠️ DO NOT USE IN PRODUCTION
