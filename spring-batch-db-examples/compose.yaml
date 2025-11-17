@@ -1,0 +1,21 @@
+services:
+
+  app:
+    container_name: app
+    build:
+      context: .
+    ports:
+      - "8082:8082"
+    environment:
+      SERVER_PORT: "8082"
+      SPRING_DATASOURCE_URL: "jdbc:h2:mem:db"
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: "org.h2.Driver"
+      SPRING_DATASOURCE_USERNAME: "sa"
+      SPRING_DATASOURCE_PASSWORD: ""
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "create-drop"
+      SPRING_H2_CONSOLE_ENABLED: "true"
+      SPRING_H2_CONSOLE_PATH: "/h2-console"
+      SPRING_BATCH_INITIALIZE_SCHEMA: "always"
+      SPRING_BATCH_JOB_ENABLED: "false"
+      SPRING_BATCH_BATCH_SIZE: "1000"
+      SPRING_PROFILES_ACTIVE: "prd"
