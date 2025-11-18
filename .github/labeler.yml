@@ -18,6 +18,14 @@
   - changed-files:
       - any-glob-to-any-file: 'spring-oracle-example/**/*'
 
+"project: spring-batch-db-examples":
+  - changed-files:
+      - any-glob-to-any-file: 'spring-batch-db-examples/**/*'
+
+"project: spring-batch-file-examples":
+  - changed-files:
+      - any-glob-to-any-file: 'spring-batch-file-examples/**/*'
+
 "type: dependency-upgrade":
   - changed-files:
       - any-glob-to-any-file: "**/pom.xml"
