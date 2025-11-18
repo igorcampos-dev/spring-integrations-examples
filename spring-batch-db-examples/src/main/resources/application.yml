@@ -22,4 +22,5 @@ spring:
     initialize-schema: always
     job:
       enabled: false
+    chunk-size: 1000
     batch-size: 1000

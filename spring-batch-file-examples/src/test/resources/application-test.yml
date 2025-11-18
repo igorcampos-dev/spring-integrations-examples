@@ -23,3 +23,4 @@ spring:
     job:
       enabled: false
     chunk-size: 5
+    batch-size: 5

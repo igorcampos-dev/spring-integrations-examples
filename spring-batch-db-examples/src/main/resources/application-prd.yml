@@ -22,4 +22,5 @@ spring:
     initialize-schema: ${SPRING_BATCH_INITIALIZE_SCHEMA}
     job:
       enabled: ${SPRING_BATCH_JOB_ENABLED}
+    chunk-size: ${SPRING_BATCH_CHUNK_SIZE}
     batch-size: ${SPRING_BATCH_BATCH_SIZE}
