@@ -21,7 +21,7 @@
 	<properties>
 		<java.version>21</java.version>
 		<spring.boot.version>3.5.7</spring.boot.version>
-		<spring.kafka.version>3.3.10</spring.kafka.version>
+		<spring.kafka.version>3.3.11</spring.kafka.version>
 		<lombok.version>1.18.42</lombok.version>
 		<jakarta.validation.version>3.1.1</jakarta.validation.version>
 	</properties>
