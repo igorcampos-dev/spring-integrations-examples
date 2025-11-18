@@ -1,0 +1,26 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO}
+
+  h2:
+    console:
+      enabled: ${SPRING_H2_CONSOLE_ENABLED}
+      path: ${SPRING_H2_CONSOLE_PATH}
+
+  batch:
+    initialize-schema: ${SPRING_BATCH_INITIALIZE_SCHEMA}
+    job:
+      enabled: ${SPRING_BATCH_JOB_ENABLED}
+    chunk-size: ${SPRING_BATCH_CHUNK_SIZE}
+    batch-size: ${SPRING_BATCH_BATCH_SIZE}

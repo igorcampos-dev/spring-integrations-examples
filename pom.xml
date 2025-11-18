@@ -20,6 +20,8 @@
         <module>spring-mysql-example</module>
         <module>spring-postgres-example</module>
         <module>spring-oracle-example</module>
+        <module>spring-batch-file-examples</module>
+        <module>spring-batch-db-examples</module>
     </modules>
 
 </project>
