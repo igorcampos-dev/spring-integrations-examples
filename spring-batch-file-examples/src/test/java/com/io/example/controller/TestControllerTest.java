@@ -60,8 +60,8 @@ class TestControllerTest {
     }
 
     @Test
-    @DisplayName("GET /job/{jobId}/status → should return 404 when job ID is invalid")
-    void shouldReturn404WhenJobIdIsInvalid() throws Exception {
+    @DisplayName("GET /job/{jobId}/status → should return 400 when job ID is invalid")
+    void shouldReturn400WhenJobIdIsInvalid() throws Exception {
 
         when(fileBatchService.getJobStatus(jobId))
                 .thenThrow(new BusinessException("JobExecution not found for this id: " + jobId));
