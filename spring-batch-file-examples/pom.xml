@@ -24,7 +24,7 @@
         <spring.batch.version>5.2.4</spring.batch.version>
         <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
         <instancio.version>5.5.1</instancio.version>
-        <poi.ooxml.version>5.4.1</poi.ooxml.version>
+        <poi.ooxml.version>5.5.0</poi.ooxml.version>
         <spring.batch.excel.version>0.1.1</spring.batch.excel.version>
         <h2.version>2.4.240</h2.version>
         <jacoco.version>0.8.14</jacoco.version>
