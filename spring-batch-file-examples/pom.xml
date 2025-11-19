@@ -26,7 +26,7 @@
         <instancio.version>5.5.1</instancio.version>
         <poi.ooxml.version>5.4.1</poi.ooxml.version>
         <spring.batch.excel.version>0.1.1</spring.batch.excel.version>
-        <h2.version>2.3.232</h2.version>
+        <h2.version>2.4.240</h2.version>
         <jacoco.version>0.8.14</jacoco.version>
     </properties>
 
