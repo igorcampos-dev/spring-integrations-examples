@@ -1,6 +1,6 @@
 package com.io.example.producer;
 
-import com.io.example.properties.KafkaProperties;
+import com.io.example.util.ConstantsUtil;
 import com.io.example.dto.KafkaDto;
 import io.github.springwolf.bindings.kafka.annotations.KafkaAsyncOperationBinding;
 import io.github.springwolf.core.asyncapi.annotations.AsyncOperation;
@@ -20,7 +20,7 @@ public class KafkaProducer {
     @AsyncPublisher(
             operation = @AsyncOperation(
                     servers = {"kafka"},
-                    channelName = KafkaProperties.KAFKA_TOPIC,
+                    channelName = ConstantsUtil.KAFKA_TOPIC,
                     description = "Tópico de exemplo pra envio de mensagens",
                     payloadType = KafkaDto.class,
                     headers = @AsyncOperation.Headers(
@@ -28,7 +28,7 @@ public class KafkaProducer {
                             values = {
                                     @AsyncOperation.Headers.Header(
                                             name = DEFAULT_CLASSID_FIELD_NAME,
-                                            value = "com.example.dto.KafkaDto",
+                                            value = "com.io.example.dto.KafkaDto",
                                             description = "Type ID")
                             })
             )

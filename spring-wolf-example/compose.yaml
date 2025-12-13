@@ -47,7 +47,7 @@ services:
     environment:
       KAFKA_HOST: kafka
       KAFKA_PORT: 9092
-      KAFKA_TOPIC_CREATE: spring-kafka-example-topic
+      KAFKA_TOPIC_CREATE: spring-kafka-simple-topic
     volumes:
       - type: bind
         source: ./docker/kafka/create_topic.sh
