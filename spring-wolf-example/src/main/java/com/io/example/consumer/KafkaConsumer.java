@@ -14,7 +14,6 @@ import static org.springframework.kafka.support.mapping.AbstractJavaTypeMapper.D
 
 @Slf4j
 @Component
-@RequiredArgsConstructor
 public class KafkaConsumer implements Consumer<KafkaDto> {
 
     @KafkaAsyncOperationBinding(bindingVersion = "1.0.0")

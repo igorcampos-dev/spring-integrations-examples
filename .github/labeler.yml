@@ -28,7 +28,7 @@
 
 "project: springwolf-example":
   - changed-files:
-      - any-glob-to-any-file: 'springwolf-example/**/*'
+      - any-glob-to-any-file: 'spring-wolf-example/**/*'
 
 "type: dependency-upgrade":
   - changed-files:
