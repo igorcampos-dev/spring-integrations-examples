@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: springwolf-example-prd
+
+  cloud:
+    function:
+      definition: kafkaConsumer
+
+    stream:
+      kafka:
+        binder:
+          brokers: ${kafka.server}
+
+      bindings:
+
+        # PRODUCER
+        sendMessage-out-0:
+          destination: ${kafka.topics.simple-topic}
+
+        # CONSUMER
+        kafkaConsumer-in-0:
+          destination: ${kafka.topics.simple-topic}
+          group: spring-kafka-simple-group
+
+springwolf:
+
+  enabled: ${SPRING_WOLF_ENABLED}
+
+  docket:
+    base-package: com.io.example
+    info:
+      title: "${spring.application.name}"
+      version: "1.0.0"
+
+    servers:
+      kafka:
+        protocol: kafka
+        host: ${kafka.server}
+
+  plugin:
+    kafka:
+      publishing:
+        enabled: ${SPRING_WOLF_ENABLED}
+        producer:
+          bootstrap-servers: ${kafka.server}
+          key-serializer: org.apache.kafka.common.serialization.StringSerializer
+          value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+          security:
+            protocol: PLAINTEXT
+  ui:
+    defaults:
+      show-bindings: true
+      show-headers: true
+
+kafka:
+  topics:
+    simple-topic: ${KAFKA_SIMPLE_TOPIC}
+  server: ${KAFKA_SERVER}

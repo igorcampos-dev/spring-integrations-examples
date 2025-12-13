@@ -26,7 +26,7 @@ Below you will find a summary table of each subproject. For more details, please
 | [Spring Boot + Postgres](./spring-postgres-example)                       | Demonstrates a basic integration between Spring Boot and Postgres.                |
 | [Spring Boot + Mysql](./spring-mysql-example)                             | Demonstrates a basic integration between Spring Boot and Mysql.                   |
 | [Spring Boot + Grafana + Prometheus](./spring-prometheus-grafana-example) | Demonstrates a basic integration between Spring Boot With Grafana and Prometheus. |
-
+| [Spring Boot + Spring Wolf](./spring-wolf-example)                        | Demonstrates a basic integration between Spring Boot and Spring Wolf.             |
 ---
 
 ## Tech Stack

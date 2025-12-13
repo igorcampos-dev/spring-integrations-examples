@@ -22,6 +22,7 @@
         <module>spring-oracle-example</module>
         <module>spring-batch-file-examples</module>
         <module>spring-batch-db-examples</module>
+        <module>spring-wolf-example</module>
     </modules>
 
 </project>

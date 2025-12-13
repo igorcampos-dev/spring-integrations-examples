@@ -26,6 +26,10 @@
   - changed-files:
       - any-glob-to-any-file: 'spring-batch-file-examples/**/*'
 
+"project: springwolf-example":
+  - changed-files:
+      - any-glob-to-any-file: 'spring-wolf-example/**/*'
+
 "type: dependency-upgrade":
   - changed-files:
       - any-glob-to-any-file: "**/pom.xml"

@@ -1,0 +1,61 @@
+services:
+
+  app:
+    container_name: app
+    build:
+      context: .
+    ports:
+      - "7075:7075"
+    environment:
+      SERVER_PORT: 7075
+      SPRING_WOLF_ENABLED: true
+      KAFKA_SIMPLE_TOPIC: spring-kafka-simple-topic
+      KAFKA_SERVER: kafka:9092
+    depends_on:
+      - kafka
+    networks:
+      - kafka-net
+
+  kafka:
+    image: apache/kafka:4.1.1
+    container_name: kafka
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:9093
+      KAFKA_LISTENERS: CONTROLLER://0.0.0.0:9094,PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9094
+      KAFKA_LOG_DIRS: /tmp/kraft-combined-logs
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+    networks:
+      - kafka-net
+
+  kafka-init:
+    container_name: kafka-init
+    image: apache/kafka:4.1.1
+    depends_on:
+      kafka:
+        condition: service_started
+    command: [ "/bin/bash", "-c", "/create_topic.sh" ]
+    environment:
+      KAFKA_HOST: kafka
+      KAFKA_PORT: 9092
+      KAFKA_TOPIC_CREATE: spring-kafka-simple-topic
+    volumes:
+      - type: bind
+        source: ./docker/kafka/create_topic.sh
+        target: /create_topic.sh
+    init: true
+    networks:
+      - kafka-net
+
+networks:
+  kafka-net:
+    driver: bridge
