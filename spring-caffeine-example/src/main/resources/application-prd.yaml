@@ -1,0 +1,32 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+
+  application:
+    name: spring-caffeine-example-prd
+
+  datasource:
+    url: ${H2_DB_URL}
+    driver-class-name: ${H2_DB_DRIVER}
+    username: ${H2_DB_USERNAME}
+    password: ${H2_DB_PASSWORD}
+
+  h2:
+    console:
+      enabled: ${H2_CONSOLE_ENABLED}
+      path: ${H2_CONSOLE_PATH}
+
+  sql:
+    init:
+      mode: ${H2_INIT_MODE}
+      schema-locations: ${H2_INIT_SCHEMA}
+
+external:
+  caffeine-version-url: ${CAFFEINE_VERSION_URL}
+
+caffeine:
+  expireAfterWrite: ${CAFFEINE_EXPIRES}
+  initialCapacity: ${CAFFEINE_CAPACITY}
+  maximumSize: ${CAFFEINE_MAXIMUM_SIZE}
+

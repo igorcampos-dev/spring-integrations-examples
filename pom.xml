@@ -23,6 +23,7 @@
         <module>spring-batch-file-examples</module>
         <module>spring-batch-db-examples</module>
         <module>spring-wolf-example</module>
+        <module>spring-caffeine-example</module>
     </modules>
 
 </project>

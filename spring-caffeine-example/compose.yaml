@@ -1,0 +1,23 @@
+services:
+
+  app:
+    container_name: app
+    build:
+      context: .
+    environment:
+      SPRING_PROFILES_ACTIVE: prd
+      SERVER_PORT: 7079
+      H2_DB_URL: jdbc:h2:mem:caffeine-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+      H2_DB_DRIVER: org.h2.Driver
+      H2_DB_USERNAME: sa
+      H2_DB_PASSWORD: ""
+      H2_CONSOLE_ENABLED: false
+      H2_CONSOLE_PATH: /h2-console
+      H2_INIT_MODE: always
+      H2_INIT_SCHEMA: classpath:sql/init.sql
+      CAFFEINE_VERSION_URL: localhost:7079/external
+      CAFFEINE_EXPIRES: 60 #seconds
+      CAFFEINE_CAPACITY: 200
+      CAFFEINE_MAXIMUM_SIZE: 500
+    ports:
+      - "7079:7079"
