@@ -26,6 +26,10 @@
   - changed-files:
       - any-glob-to-any-file: 'spring-batch-file-examples/**/*'
 
+"project: spring-caffeine-example":
+  - changed-files:
+      - any-glob-to-any-file: 'spring-caffeine-example/**/*'
+
 "project: springwolf-example":
   - changed-files:
       - any-glob-to-any-file: 'spring-wolf-example/**/*'

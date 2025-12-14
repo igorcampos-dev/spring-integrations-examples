@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+
+  application:
+    name: spring-caffeine-example-local
+
+  datasource:
+    url: jdbc:h2:mem:caffeine-db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:sql/init.sql
+
+external:
+  caffeine-version-url: localhost:8080/external
+
+caffeine:
+  expireAfterWrite: 60 # seconds
+  initialCapacity: 200
+  maximumSize: 500
+
