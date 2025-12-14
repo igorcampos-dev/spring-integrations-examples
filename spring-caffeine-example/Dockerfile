@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jdk-jammy as deps
+FROM eclipse-temurin:21.0.9_10-jdk-jammy as deps
 
 WORKDIR /build
 
@@ -25,7 +25,7 @@ WORKDIR /build
 RUN java -Djarmode=layertools -jar target/app.jar extract --destination target/extracted
 
 
-FROM eclipse-temurin:21-jre-jammy AS final
+FROM eclipse-temurin:21.0.9_10-jre-jammy AS final
 
 
 ARG UID=10001
