@@ -19,43 +19,51 @@
 
     <properties>
 		<java.version>21</java.version>
-	</properties>
+        <spring.boot.version>3.5.8</spring.boot.version>
+        <maven.plugin.version>3.14.1</maven.plugin.version>
+        <spring.cloud.kafka>5.0.0</spring.cloud.kafka>
+        <lombok.version>1.18.42</lombok.version>
+        <springwolf.version>1.20.0</springwolf.version>
+    </properties>
 
 	<dependencies>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-stream-kafka</artifactId>
-            <version>5.0.0</version>
+            <version>${spring.cloud.kafka}</version>
         </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+            <version>${lombok.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.github.springwolf</groupId>
             <artifactId>springwolf-ui</artifactId>
-            <version>1.20.0</version>
+            <version>${springwolf.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.github.springwolf</groupId>
             <artifactId>springwolf-kafka</artifactId>
-            <version>1.20.0</version>
+            <version>${springwolf.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <version>${spring.boot.version}</version>
         </dependency>
 
     </dependencies>
@@ -63,31 +71,25 @@
 	<build>
 		<plugins>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<annotationProcessorPaths>
-						<path>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</path>
-					</annotationProcessorPaths>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.plugin.version}</version>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+            </plugin>
 
 		</plugins>
 	</build>

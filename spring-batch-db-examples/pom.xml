@@ -23,7 +23,7 @@
         <h2.version>2.4.240</h2.version>
         <spring.boot.version>3.5.8</spring.boot.version>
         <spring.batch.version>5.2.4</spring.batch.version>
-        <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
+        <maven.plugin.version>3.14.1</maven.plugin.version>
         <instancio.version>5.5.1</instancio.version>
         <jacoco.version>0.8.14</jacoco.version>
     </properties>
@@ -77,8 +77,8 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-            <version>${spring.boot.version}</version>
             <scope>test</scope>
+            <version>${spring.boot.version}</version>
 		</dependency>
 
 		<dependency>
@@ -96,7 +96,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven.compiler.plugin.version}</version>
+                <version>${maven.plugin.version}</version>
 				<configuration>
 					<annotationProcessorPaths>
 						<path>
