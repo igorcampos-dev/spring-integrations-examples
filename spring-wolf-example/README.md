@@ -43,8 +43,8 @@ and message schemas in real time.
 
 ## Related Resources
 
-| Description                    | Link                                                                                                           |
-|--------------------------------|----------------------------------------------------------------------------------------------------------------|
-| Spring Wolf Documentation      | https://springwolf.dev                                                                                         |
-| AsyncAPI Specification         | https://www.asyncapi.com                                                                                       |
-| Spring Wolf With Kafka Example | [here](https://github.com/springwolf/springwolf-core/tree/master/springwolf-examples/springwolf-kafka-example) |
+| Description               | Link                                                                          |
+|---------------------------|-------------------------------------------------------------------------------|
+| Spring Wolf Documentation | https://springwolf.dev                                                        |
+| AsyncAPI Specification    | https://www.asyncapi.com                                                      |
+| Spring Wolf Examples      | https://github.com/springwolf/springwolf-core/tree/master/springwolf-examples |

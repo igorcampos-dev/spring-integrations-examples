@@ -21,7 +21,7 @@ public class KafkaProducer {
             operation = @AsyncOperation(
                     servers = {"kafka"},
                     channelName = ConstantsUtil.KAFKA_TOPIC,
-                    description = "Tópico de exemplo pra envio de mensagens",
+                    description = "Example topic for sending messages",
                     payloadType = KafkaDto.class,
                     headers = @AsyncOperation.Headers(
                             schemaName = "SpringKafkaDefaultHeaders-KafkaDto",

@@ -19,7 +19,7 @@ public class KafkaConsumer implements Consumer<KafkaDto> {
     @KafkaAsyncOperationBinding(bindingVersion = "1.0.0")
     @AsyncListener(operation = @AsyncOperation(
             channelName = ConstantsUtil.KAFKA_TOPIC,
-            description = "Tópico que recebe dados de exemplo do kafka",
+            description = " Topic that receives sample data from Kafka",
             servers = {"kafka"},
             headers = @AsyncOperation.Headers(
                     schemaName = "SpringKafkaDefaultHeaders-KafkaDto",
