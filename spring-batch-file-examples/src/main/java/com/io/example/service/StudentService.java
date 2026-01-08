@@ -2,6 +2,6 @@ package com.io.example.service;
 
 import com.io.example.dto.StudentDto;
 
-public interface TestService {
+public interface StudentService {
     void print(StudentDto studentDto);
 }

@@ -1,22 +1,41 @@
-# Spring Batch Examples | DB And Async 
+# Spring Batch File Readers
 
-This project is a **Spring Boot** application demonstrating a **fully asynchronous Spring Batch job**, designed with a focus on **performance** and **scalability**.
+This project is a **Spring Boot** application that demonstrates how to build **custom file readers using Spring Batch**, with a strong focus on **performance**, **scalability**, and **clean design**.
+
+The main goal of this repository is to showcase **different strategies for reading files** depending on their size and characteristics, following **real-world batch processing patterns**.
 
 ---
 
 ## 🚀 Overview
 
-The example showcases how to configure and run an **asynchronous Spring Batch job** that processes a large dataset efficiently.  
-The job reads **10,000 records** from a database table, simulating item processing by printing  
-`"item processed"` for each entry.
+The project currently provides **custom Spring Batch `ItemReader` implementations** for reading Excel files, using **different approaches for small and large files**:
+
+- **Small Excel files**: loaded and processed entirely in memory
+- **Large Excel files**: streamed row by row to minimize memory usage
+
+The architecture is intentionally extensible, allowing additional file formats (such as **CSV**) to be added in the future without changing the core batch flow.
 
 ---
 
-## ⚙️ How It Works
+## 📂 Supported File Types
 
-- The job leverages Spring Batch’s asynchronous capabilities to read and process data concurrently.
-- An **H2 in-memory database** is used to store the sample data.
-- The asynchronous behavior is enabled through a specific Spring profile.
+### ✅ Currently Implemented
+
+- **Small Excel files (`.xlsx`)**
+    - Suitable for files that fit comfortably in memory
+    - Simple and fast processing
+
+- **Large Excel files (`.xlsx`)**
+    - Streaming-based reader
+    - Designed for large datasets
+    - Low memory footprint
+    - Handles empty rows gracefully
+
+### 🕒 Planned
+
+- **CSV files**
+- Other structured file formats (as needed)
+
 
 ---
 
@@ -25,6 +44,13 @@ The job reads **10,000 records** from a database table, simulating item processi
 - **Java 21**
 - **Spring Batch**
 - **Spring Boot**
-- **H2 Database**
+- **Apache POI (Streaming API)**
+- **pjfanning**
 
 ---
+
+## 🎯 Project Goals
+
+- Demonstrate **production-ready Spring Batch readers**
+- Show how to handle **large files efficiently**
+- Provide clean, extensible examples without framework overengineering

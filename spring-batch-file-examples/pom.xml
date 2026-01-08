@@ -28,6 +28,7 @@
         <spring.batch.excel.version>0.2.0</spring.batch.excel.version>
         <h2.version>2.4.240</h2.version>
         <jacoco.version>0.8.14</jacoco.version>
+        <excel.streaming.reader.version>5.2.0</excel.streaming.reader.version>
     </properties>
 
 	<dependencies>
@@ -69,20 +70,6 @@
             <version>${instancio.version}</version>
         </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-            <version>${spring.boot.version}</version>
-            <scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.batch</groupId>
-			<artifactId>spring-batch-test</artifactId>
-			<scope>test</scope>
-            <version>${spring.batch.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.batch.extensions</groupId>
             <artifactId>spring-batch-excel</artifactId>
@@ -100,6 +87,26 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>${poi.ooxml.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.pjfanning</groupId>
+            <artifactId>excel-streaming-reader</artifactId>
+            <version>${excel.streaming.reader.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring.boot.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.batch</groupId>
+            <artifactId>spring-batch-test</artifactId>
+            <scope>test</scope>
+            <version>${spring.batch.version}</version>
         </dependency>
 
     </dependencies>
