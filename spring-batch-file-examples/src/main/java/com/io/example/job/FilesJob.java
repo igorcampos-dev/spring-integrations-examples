@@ -10,12 +10,19 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class FileJob {
+public class FilesJob {
 
     @Bean
-    public Job excelJob(JobRepository jobRepository, Step step) {
-        return new JobBuilder("excelJob", jobRepository)
-                .start(step)
+    public Job smallExcelJob(JobRepository jobRepository, Step smallExcelStep) {
+        return new JobBuilder("smallExcelJob", jobRepository)
+                .start(smallExcelStep)
+                .build();
+    }
+
+    @Bean
+    public Job largeExcelJob(JobRepository jobRepository, Step largeExcelStep) {
+        return new JobBuilder("largeExcelJob", jobRepository)
+                .start(largeExcelStep)
                 .build();
     }
 

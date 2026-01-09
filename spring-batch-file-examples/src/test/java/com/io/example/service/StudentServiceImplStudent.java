@@ -1,13 +1,13 @@
 package com.io.example.service;
 
 import com.io.example.dto.StudentDto;
-import com.io.example.service.impl.TestServiceImpl;
+import com.io.example.service.impl.StudentServiceImpl;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Test;
 
-class TestServiceImplTest {
+class StudentServiceImplStudent {
 
-    private final TestServiceImpl service = new TestServiceImpl();
+    private final StudentServiceImpl service = new StudentServiceImpl();
 
     @Test
     void print_shouldLogStudent() {

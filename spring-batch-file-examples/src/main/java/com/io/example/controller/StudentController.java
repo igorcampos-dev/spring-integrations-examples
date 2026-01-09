@@ -1,24 +1,22 @@
 package com.io.example.controller;
 
+import com.io.example.dto.ExecutionDto;
 import com.io.example.service.FileBatchService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/job")
 @RequiredArgsConstructor
-public class TestController {
+public class StudentController {
 
     private final FileBatchService fileBatchService;
 
-    @GetMapping("/process")
-    public ResponseEntity<Long> processJob(){
-        var response = fileBatchService.runJob();
+    @PostMapping("/process")
+    public ResponseEntity<Long> processJob(@RequestBody ExecutionDto dto){
+        var response = fileBatchService.runJob(dto);
         return ResponseEntity.ok(response);
     }
 
