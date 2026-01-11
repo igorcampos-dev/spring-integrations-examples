@@ -34,6 +34,10 @@
   - changed-files:
       - any-glob-to-any-file: 'spring-wolf-example/**/*'
 
+"project: spring-mongoDB-example":
+  - changed-files:
+      - any-glob-to-any-file: 'spring-mongoDB-example/**/*'
+
 "type: dependency-upgrade":
   - changed-files:
       - any-glob-to-any-file: "**/pom.xml"

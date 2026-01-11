@@ -1,0 +1,21 @@
+
+services:
+
+  app-mongo:
+    container_name: app-mongo
+    build:
+      context: .
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_PROFILES_ACTIVE: prd
+      MONGODB_URI: mongodb://admin:admin@mongo-database:27017/config?authSource=admin
+
+  mongo-database:
+    image: mongo:7.0
+    container_name: mongo-database
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    ports:
+      - "27017:27017"

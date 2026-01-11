@@ -24,6 +24,7 @@
         <module>spring-batch-db-examples</module>
         <module>spring-wolf-example</module>
         <module>spring-caffeine-example</module>
+        <module>spring-mongodb-example</module>
     </modules>
 
 </project>

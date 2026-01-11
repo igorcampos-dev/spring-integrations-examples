@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: spring-mongoDB-example-dev
+
+  data:
+    mongodb:
+      uri: mongodb://admin:admin@localhost:27017/config?authSource=admin

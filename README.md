@@ -28,6 +28,7 @@ Below you will find a summary table of each subproject. For more details, please
 | [Spring Boot + Grafana + Prometheus](./spring-prometheus-grafana-example) | Demonstrates a basic integration between Spring Boot With Grafana and Prometheus. |
 | [Spring Boot + Spring Wolf](./spring-wolf-example)                        | Demonstrates a basic integration between Spring Boot and Spring Wolf.             |
 | [Spring Boot + Caffeine](./spring-caffeine-example)                       | Demonstrates a basic integration between Spring Boot and Caffeine.                |
+| [Spring Boot + MongoDB](./spring-oracle-example)                          | Demonstrates a basic integration between Spring Boot and MongoDB.                 |
 ---
 
 ## Tech Stack

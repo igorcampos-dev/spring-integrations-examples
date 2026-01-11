@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: spring-mysql-example-prd
+
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
