@@ -23,6 +23,7 @@
         <oracle.database.version>23.26.0.0.0</oracle.database.version>
         <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
         <h2database.version>2.4.240</h2database.version>
+        <lombok.version>1.18.42</lombok.version>
     </properties>
 
     <dependencies>
@@ -44,6 +45,13 @@
             <artifactId>ojdbc11</artifactId>
             <scope>runtime</scope>
             <version>${oracle.database.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
