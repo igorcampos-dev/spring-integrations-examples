@@ -1,10 +1,10 @@
-name: spring-mongoDB-example CI Build
+name: spring-mongodb-example CI Build
 
 on:
   pull_request:
     branches: [master]
     paths:
-      - "spring-mongoDB-example/**"
+      - "spring-mongodb-example/**"
     types:
       - opened
       - synchronize
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: spring-mongoDB-example
+        working-directory: spring-mongodb-example
     strategy:
       matrix:
         distribution: [ 'temurin' ]
@@ -49,13 +49,13 @@ jobs:
         id: services
         run: |
           echo "services<<EOF" >> $GITHUB_OUTPUT
-          docker compose -f ./spring-mongoDB-example/compose.yaml config --services >> $GITHUB_OUTPUT
+          docker compose -f ./spring-mongodb-example/compose.yaml config --services >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Start containers with Compose Action
         uses: hoverkraft-tech/compose-action@v2.4.3
         with:
-          compose-file: './spring-mongoDB-example/compose.yaml'
+          compose-file: './spring-mongodb-example/compose.yaml'
           services: ${{ steps.services.outputs.services }}
           up-flags: '--build'
           down-flags: '--volumes'
