@@ -22,7 +22,7 @@
         <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
         <mysql.version>9.4.0</mysql.version>
         <h2database.version>2.4.240</h2database.version>
-        <postgresql.version>42.7.8</postgresql.version>
+        <postgresql.version>42.7.9</postgresql.version>
         <lombok.version>1.18.42</lombok.version>
     </properties>
 
