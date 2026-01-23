@@ -23,7 +23,7 @@
         <maven.plugin.version>3.14.1</maven.plugin.version>
         <spring.cloud.kafka>5.0.0</spring.cloud.kafka>
         <lombok.version>1.18.42</lombok.version>
-        <springwolf.version>1.20.0</springwolf.version>
+        <springwolf.version>1.21.0</springwolf.version>
     </properties>
 
 	<dependencies>
