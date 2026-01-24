@@ -17,7 +17,7 @@ services:
       SPRING_JPA_SHOW_SQL: false
 
   mysql-db:
-    image: mysql:9.5
+    image: mysql:9.6
     container_name: mysql-db
     ports:
       - "3306:3306"
