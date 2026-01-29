@@ -22,7 +22,7 @@
         <h2.version>2.4.240</h2.version>
         <lombok.version>1.18.42</lombok.version>
         <caffeine.version>3.2.3</caffeine.version>
-        <spring.cloud.openfeign.version>5.0.0</spring.cloud.openfeign.version>
+        <spring.cloud.openfeign.version>5.0.1</spring.cloud.openfeign.version>
 	</properties>
 
 	<dependencies>

@@ -21,7 +21,7 @@
 		<java.version>21</java.version>
         <spring.boot.version>3.5.10</spring.boot.version>
         <maven.plugin.version>3.14.1</maven.plugin.version>
-        <spring.cloud.kafka>5.0.0</spring.cloud.kafka>
+        <spring.cloud.kafka>5.0.1</spring.cloud.kafka>
         <lombok.version>1.18.42</lombok.version>
         <springwolf.version>2.0.0</springwolf.version>
     </properties>
