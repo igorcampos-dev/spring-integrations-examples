@@ -22,7 +22,7 @@
         <lombok.version>1.18.42</lombok.version>
         <spring.boot.version>3.5.10</spring.boot.version>
         <spring.batch.version>5.2.4</spring.batch.version>
-        <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
+        <maven.compiler.plugin.version>3.15.0</maven.compiler.plugin.version>
         <instancio.version>5.5.1</instancio.version>
         <poi.ooxml.version>5.5.1</poi.ooxml.version>
         <spring.batch.excel.version>0.2.0</spring.batch.excel.version>
