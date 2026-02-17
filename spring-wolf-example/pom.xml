@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.10</version>
+		<version>4.0.2</version>
 		<relativePath/>
 	</parent>
 
@@ -19,8 +19,8 @@
 
     <properties>
 		<java.version>21</java.version>
-        <spring.boot.version>3.5.10</spring.boot.version>
-        <maven.plugin.version>3.15.0</maven.plugin.version>
+        <spring.boot.version>4.0.2</spring.boot.version>
+        <maven.plugin.version>4.0.0-beta-4</maven.plugin.version>
         <spring.cloud.kafka>5.0.1</spring.cloud.kafka>
         <lombok.version>1.18.42</lombok.version>
         <springwolf.version>2.0.0</springwolf.version>

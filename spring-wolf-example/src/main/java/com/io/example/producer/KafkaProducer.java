@@ -36,7 +36,7 @@ public class KafkaProducer {
     @KafkaAsyncOperationBinding(bindingVersion = "1.0.0")
     public void send(String text) {
         KafkaDto message = new KafkaDto(text);
-        bridge.send("sendMessage-out-0", message);
+        bridge.send("kafkaV2Producer-out-0", message);
     }
 
 }
