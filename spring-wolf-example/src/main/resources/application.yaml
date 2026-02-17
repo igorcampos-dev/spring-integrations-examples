@@ -14,7 +14,7 @@ spring:
       bindings:
 
         # PRODUCER
-        sendMessage-out-0:
+        kafkaProducer-out-0:
           destination: ${kafka.topics.simple-topic}
 
         # CONSUMER
