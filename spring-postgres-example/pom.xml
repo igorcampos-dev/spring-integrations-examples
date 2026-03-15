@@ -23,7 +23,7 @@
         <mysql.version>9.4.0</mysql.version>
         <h2database.version>2.4.240</h2database.version>
         <postgresql.version>42.7.10</postgresql.version>
-        <lombok.version>1.18.42</lombok.version>
+        <lombok.version>1.18.44</lombok.version>
     </properties>
 
     <dependencies>
