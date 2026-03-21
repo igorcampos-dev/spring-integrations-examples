@@ -22,7 +22,7 @@
         <lombok.version>1.18.44</lombok.version>
         <h2.version>2.4.240</h2.version>
         <spring.boot.version>3.5.11</spring.boot.version>
-        <spring.batch.version>5.2.4</spring.batch.version>
+        <spring.batch.version>5.2.5</spring.batch.version>
         <maven.plugin.version>3.15.0</maven.plugin.version>
         <instancio.version>5.5.1</instancio.version>
         <jacoco.version>0.8.14</jacoco.version>
