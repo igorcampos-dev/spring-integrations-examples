@@ -27,7 +27,7 @@
         <poi.ooxml.version>5.5.1</poi.ooxml.version>
         <spring.batch.excel.version>0.2.0</spring.batch.excel.version>
         <h2.version>2.4.240</h2.version>
-        <jacoco.version>0.8.14</jacoco.version>
+        <jacoco.version>0.8.16</jacoco.version>
         <excel.streaming.reader.version>5.2.0</excel.streaming.reader.version>
     </properties>
 
